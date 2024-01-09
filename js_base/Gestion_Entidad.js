@@ -22,7 +22,7 @@ class GestionEntidad {
 
     mostrarTitulos(){
 
-        this.ponerbotonesaddysearch(); // comprobar si ya existen, pepe viyuela
+        this.ponerbotonesaddysearch(); // comprobar si ya existen
 
         if (document.getElementById("titulostablacabecera")){
 
