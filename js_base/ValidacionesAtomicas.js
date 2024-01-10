@@ -32,7 +32,7 @@ class validacionesAtomicas{
         }
     }
 
-    static solo_ñ_espacios(id){
+    static acentos_ñ_espacios(id){
         if (/^[A-Za-zÁ-Úá-úñÑ\s]+$/.test(document.getElementById(id)) == true){
             return true;
         } else {
@@ -40,7 +40,7 @@ class validacionesAtomicas{
         }
     }
 
-    static no_acentos(id){
+    static no_acentos_ñ_espacios(id){
         if (/^[A-Za-z]+$/.test(document.getElementById(id)) == true){
             return true;
         } else {
@@ -48,7 +48,19 @@ class validacionesAtomicas{
         }
     }
 
+    static no_acentos_ñ_espacios_fich(id){
+        if (/^[A-Za-z.]+$/.test(document.getElementById(id)) == true){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     static formato_fecha_correcto(id){
+
+    }
+
+    static extension_fich(id){
         
     }
 

@@ -396,9 +396,9 @@ class Gestion_congreso extends GestionEntidad{
             DOM_class.mostrardivmensajeserrordebajo('nombrec', 'KO_nombrec_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.solo_ñ_espacios('nombrec')){
+        if(ValidacionesAtomicas.acentos_ñ_espacios('nombrec')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nombrec','KO_nombrec_solo_ñ_espacios');
+            DOM_class.mostrardivmensajeserrordebajo('nombrec','KO_nombrec_acentos_ñ_espacios');
             return false;
         }
         DOM_class.exito('nombrec');
@@ -417,9 +417,9 @@ class Gestion_congreso extends GestionEntidad{
             DOM_class.mostrarerrorvalor('nombrec');
             return false;
         }
-        if(ValidacionesAtomicas.solo_ñ_espacios('nombrec')){
+        if(ValidacionesAtomicas.acentos_ñ_espacios('nombrec')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nombrec','KO_nombrec_solo_ñ_espacios');
+            DOM_class.mostrardivmensajeserrordebajo('nombrec','KO_nombrec_acentos_ñ_espacios');
             DOM_class.mostrarerrorvalor('nombrec');
             return false;
         }
@@ -439,9 +439,9 @@ class Gestion_congreso extends GestionEntidad{
             DOM_class.mostrardivmensajeserrordebajo('acronimoc', 'KO_acronimoc_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.no_acentos('acronimoc')){
+        if(ValidacionesAtomicas.no_acentos_ñ_espacios('acronimoc')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('acronimoc','KO_acronimoc_no_acentos');
+            DOM_class.mostrardivmensajeserrordebajo('acronimoc','KO_acronimoc_no_acentos_ñ_espacios');
             return false;
         }
         DOM_class.exito('acronimoc');
@@ -460,9 +460,9 @@ class Gestion_congreso extends GestionEntidad{
             DOM_class.mostrarerrorvalor('acronimoc');
             return false;
         }
-        if(ValidacionesAtomicas.no_acentos('acronimoc')){
+        if(ValidacionesAtomicas.no_acentos_ñ_espacios('acronimoc')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('acronimoc','KO_acronimoc_no_acentos');
+            DOM_class.mostrardivmensajeserrordebajo('acronimoc','KO_acronimoc_no_acentos_ñ_espacios');
             DOM_class.mostrarerrorvalor('acronimoc');
             return false;
         }
@@ -470,10 +470,10 @@ class Gestion_congreso extends GestionEntidad{
         return true;
     }
 
-    //Validaciones de AnhoC
+    //Validaciones de AnhoC:
 
 
-    //Validaciones de LugarC
+    //Validaciones de LugarC:
     static comprobar_lugarc() {
 
         if (ValidacionesAtomicas.size_minimo('lugarc', 2)) {
@@ -485,9 +485,9 @@ class Gestion_congreso extends GestionEntidad{
             DOM_class.mostrardivmensajeserrordebajo('lugarc', 'KO_lugarc_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.solo_ñ_espacios('lugarc')){
+        if(ValidacionesAtomicas.acentos_ñ_espacios('lugarc')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('lugarc','KO_lugarc_solo_ñ_espacios');
+            DOM_class.mostrardivmensajeserrordebajo('lugarc','KO_lugarc_acentos_ñ_espacios');
             return false;
         }
         DOM_class.exito('lugarc');
@@ -506,13 +506,136 @@ class Gestion_congreso extends GestionEntidad{
             DOM_class.mostrarerrorvalor('lugarc');
             return false;
         }
-        if(ValidacionesAtomicas.solo_ñ_espacios('lugarc')){
+        if(ValidacionesAtomicas.acentos_ñ_espacios('lugarc')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('lugarc','KO_lugarc_solo_ñ_espacios');
+            DOM_class.mostrardivmensajeserrordebajo('lugarc','KO_lugarc_acentos_ñ_espacios');
             DOM_class.mostrarerrorvalor('lugarc');
             return false;
         }
         DOM_class.exito('lugarc');
+        return true;
+    }
+
+    //Validaciones de FihceropdfC:
+    static comprobar_nuevo_ficheropdfc(){
+        if(validacionesatomicas.size_minimo_extension('nuevo_ficheropdfc',1)){
+        } else {
+            //Este alert por la cara???
+            alert("entra en el malo");
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_tam_min');
+            return false;
+        }
+        if(validacionesatomicas.size_maximo_extension('nuevo_ficheropdfc',20)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_tam_max');
+            return false;
+        }
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('nuevo_ficheropdfc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_no_acentos_ñ_espacios_fich');
+            return false;
+        }
+        if(validacionesatomicas.extension_fich('nuevo_ficheropdfc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_extension_fich');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('nuevo_ficheropdfc');
+        return true;
+    }
+
+    static comprobar_nuevo_ficheropdfc_EDIT(){
+        if(!validacionesatomicas.es_vacio('nuevo_ficheropdfc')){
+            if(validacionesatomicas.size_minimo_extension('nuevo_ficheropdfc',1)){
+            } else {
+                DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_tam_min');
+                return false;
+            }
+            if(validacionesatomicas.size_maximo_extension('nuevo_ficheropdfc',20)){
+            } else {
+                DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_tam_max');
+                return false;
+            }
+            if(validacionesatomicas.no_acentos_ñ_espacios_fich('nuevo_ficheropdfc')){
+            } else {
+                DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_no_acentos_ñ_espacios_fich');
+                return false;
+            }
+            if(validacionesatomicas.extension_fich('nuevo_ficheropdfc')){
+            } else {
+                DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_extension_fich');
+                return false;
+            }
+        }
+        DOM_class.mostrarexitovalor('nuevo_ficheropdfc');
+        return true;
+    }
+
+    static comprobar_nuevo_ficheropdfc_SEARCH(){
+        if(validacionesatomicas.es_vacio('nuevo_ficheropdfc')){
+            DOM_class.mostrarexitovalor('nuevo_ficheropdfc');
+            return true;
+        }
+        if(validacionesatomicas.size_maximo_extension('nuevo_ficheropdfc',20)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_tam_max');
+            DOM_class.mostrarerrorvalor('nuevo_ficheropdfc');
+            return false;
+        }
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('nuevo_ficheropdfc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_no_acentos_ñ_espacios_fich');
+            DOM_class.mostrarerrorvalor('nuevo_ficheropdfc');
+            return false;
+        }
+
+        DOM_class.mostrarexitovalor('nuevo_ficheropdfc');
+        return true;
+    }
+
+    static comprobar_ficheropdfc(){
+        if(validacionesatomicas.size_minimo_extension('ficheropdfc',1)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('ficheropdfc','KO_ficheropdfc_tam_min');
+            return false;
+        }
+        if(validacionesatomicas.size_maximo_extension('ficheropdfc',20)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('ficheropdfc','KO_ficheropdfc_tam_max');
+            return false;
+        }
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('ficheropdfc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('ficheropdfc','KO_ficheropdfc_no_acentos_ñ_espacios_fich');
+            return false;
+        }
+        if(validacionesatomicas.extension_fich('ficheropdfc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('ficheropdfc','KO_ficheropdfc_extension_fich');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('ficheropdfc');
+        return true;
+    }
+
+    static comprobar_ficheropdfc_SEARCH(){
+        if(validacionesatomicas.es_vacio('ficheropdfc')){
+            DOM_class.mostrarexitovalor('ficheropdfc');
+            return true;
+        }
+        if(validacionesatomicas.size_maximo_extension('ficheropdfc',20)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('ficheropdfc','KO_ficheropdfc_tam_max');
+            DOM_class.mostrarerrorvalor('ficheropdfc');
+            return false;
+        }
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('ficheropdfc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('ficheropdfc','KO_ficheropdfc_no_acentos_ñ_espacios_fich');
+            DOM_class.mostrarerrorvalor('ficheropdfc');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('ficheropdfc');
         return true;
     }
 
