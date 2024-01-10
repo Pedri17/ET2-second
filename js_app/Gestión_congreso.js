@@ -3,21 +3,31 @@ class Gestion_congreso extends GestionEntidad{
         GestionEntidad.resetearForm();
     }
 
+//Formularios------------------------------------------------------------------------------------
     static async createForm_ADD(){
         this.recargarform();
-        document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_ADD_programa"]; 
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_ADD_programa";  
         document.getElementById('IU_form').action = 'javascript:Gestion_congreso.ADD();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_congreso.comprobar_submit();');
 
         document.getElementById('CodigoC').setAttribute('onblur', 'Gestion_congreso.comprobar_codigoc()');
+
         document.getElementById('NombreC').setAttribute('onblur', 'Gestion_congreso.comprobar_nombrec()');
+        
         document.getElementById('AcronimoC').setAttribute('onblur', 'Gestion_congreso.comprobar_acronimoc()');
+        
+        //Estar pendiente por el formato
         document.getElementById('AnhoC').setAttribute('onblur', 'Gestion_congreso.comprobar_anhoc()');
+        
         document.getElementById('LugarC').setAttribute('onblur', 'Gestion_congreso.comprobar_lugarc()');
 
-        //Es un fichero, debe hacerse distinto:
-        document.getElementById('FicheropdfC').setAttribute('onblur', 'Gestion_congreso.comprobar_ficheroc()');
+        document.getElementById('nuevo_FicheropdfC').setAttribute('onblur','Gestion_programa.comprobar_nuevo_ficheropdfc()');
+        
+        document.getElementById("label_FicheropdfC").style.display = 'none';
+        document.getElementById("FicheropdfC").style.display = 'none';
+        document.getElementById("link_FicheropdfC").style.display = 'none';
 
+        //Preguntar por este bloque antes de los lets
         await this.peticionBackGeneral('', 'area', 'SEARCH')
         .then((respuesta) => {
             console.log(respuesta);
@@ -43,12 +53,16 @@ class Gestion_congreso extends GestionEntidad{
 
     }
 
+    //Ver tema de atributos pasados
     static async createForm_EDIT(CodigoC, NombreC, AcronimoC, AnhoC, LugarC, FicheropdfC){
         this.recargarform();
-        document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_EDIT_congreso"]; 
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_EDIT_programa";
+        document.getElementById('IU_form').action = 'javascript:Gestion_programa.EDIT();';
+        document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_programa.comprobar_submit_EDIT();');
 
         document.getElementById('CodigoC').setAttribute('onblur', 'Gestion_programa.comprobar_codigoc()');
         document.getElementById('CodigoC').value = CodigoC;
+        //document.getElementById('id_programa').setAttribute("readonly","");??
 
         document.getElementById('NombreC').setAttribute('onblur', 'Gestion_programa.comprobar_nombrec()');
         document.getElementById('NombreC').value = NombreC;
@@ -62,9 +76,12 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById('LugarC').setAttribute('onblur', 'Gestion_programa.comprobar_lugarc()');
         document.getElementById('LugarC').value = LugarC;
 
-        //De nuevo, es un fichero, por lo que debe hacerse distinto:
-        document.getElementById('FicheropdfC').setAttribute('onblur', 'Gestion_programa.comprobar_ficheropdfc()');
         document.getElementById('FicheropdfC').value = FicheropdfC;
+        document.getElementById('link_FicheropdfC').setAttribute('href','http://193.147.87.202/ET2/filesuploaded/files_ficheropdfc/'+FicheropdfC.value);
+        document.getElementById('FicheropdfC').setAttribute("readonly",true);
+
+        document.getElementById('nuevo_FicheropdfC').setAttribute('onblur','Gestion_programa.comprobar_nuevo_FicheropdfC()');
+
 
         await this.peticionBackGeneral('', 'area', 'SEARCH')
         .then((respuesta) => {
@@ -93,17 +110,31 @@ class Gestion_congreso extends GestionEntidad{
 
     static async createForm_DELETE(CodigoC, NombreC, AcronimoC, AnhoC, LugarC, FicheropdfC){
         this.recargarform();
-        document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_DELETE_congreso"]; 
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_DELETE_programa";
         document.getElementById('IU_form').action = 'javascript:Gestion_programa.DELETE();';
 
         document.getElementById('CodigoC').value = CodigoC;
-        document.getElementById('NombreC').value = NombreC;
-        document.getElementById('AcronimoC').value = AcronimoC;
-        document.getElementById('AnhoC').value = AnhoC;
-        document.getElementById('LugarC').value = LugarC;
+        document.getElementById('CodigoC').setAttribute('readonly',true);
 
-        //Same, pdf, debe cambiarse:
+        document.getElementById('NombreC').value = NombreC;
+        document.getElementById('NombreC').setAttribute('readonly',true);
+
+        document.getElementById('AcronimoC').value = AcronimoC;
+        document.getElementById('AcronimoC').setAttribute('readonly',true);
+
+        document.getElementById('AnhoC').value = AnhoC;
+        document.getElementById('AnhoC').setAttribute('readonly',true);
+
+        document.getElementById('LugarC').value = LugarC;
+        document.getElementById('LugarC').setAttribute('readonly',true);
+
         document.getElementById('FicheropdfC').value = FicheropdfC;
+        document.getElementById('FicheropdfC').setAttribute('readonly',true);
+        document.getElementById('FicheropdfC').setAttribute("readonly", true);
+        document.getElementById("link_FicheropdfC").href += FicheropdfC;
+
+        document.getElementById("label_nuevo_FicheropdfC").style.display = 'none';
+        document.getElementById("nuevo_FicheropdfC").style.display = 'none';
 
         await this.peticionBackGeneral('', 'area', 'SEARCH')
         .then((respuesta) => {
@@ -134,33 +165,37 @@ class Gestion_congreso extends GestionEntidad{
     static async createForm_SHOWCURRENT(CodigoC, NombreC, AcronimoC, AnhoC, LugarC, FicheropdfC){
         this.createForm_DELETE(CodigoC, NombreC, AcronimoC, AnhoC, LugarC, FicheropdfC);
 
-        document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_SHOWCURRENT_congreso"]; 
-        document.getElementById('IU_form').action = 'javascript:Gestion_programa.SEARCH();';
-        document.getElementById('id_submit').style.display = 'none';
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_SHOWCURRENT_programa";
+        document.getElementById('botondelete').remove();
 
-        let imgadd = document.createElement('img');
-        imgadd.src = './iconos/SHOWCURRENT.png';
-        botonadd.append(imgadd);
-        document.getElementById('IU_form').append(botonadd);
+        let imgshowcurrent = document.createElement('img');
+        imgshowcurrent.src = './iconos/SHOWCURRENT.png';
+        imgshowcurrent.setAttribute("onclick","DOM_class.cerrar_div_formulario();")
+        document.getElementById('IU_form').append(imgshowcurrent);
 
         setLang();
     }
 
     static async createForm_SEARCH(){
 
-        document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_SEARCH_congreso"]; 
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_SEARCH_programa"; 
         this.recargarform();
         document.getElementById('IU_form').action = 'javascript:Gestion_programa.SEARCH();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_programa.comprobar_submit_SEARCH();');
 
         document.getElementById('CodigoC').setAttribute('onblur', 'Gestion_programa.comprobar_codigoc_SEARCH()');
+        
         document.getElementById('NombreC').setAttribute('onblur', 'Gestion_programa.comprobar_nombrec_SEARCH()');
+        
         document.getElementById('AcronimoC').setAttribute('onblur', 'Gestion_programa.comprobar_acronimoc_SEARCH()');
+        
         document.getElementById('AnhoC').setAttribute('onblur', 'Gestion_programa.comprobar_anhoc_SEARCH()');
+        
         document.getElementById('LugarC').setAttribute('onblur', 'Gestion_programa.comprobar_lugarc_SEARCH()');
 
-        //Pdf, lo de siempre:
-        document.getElementById('FicheropdfC').setAttribute('onblur', 'Gestion_programa.comprobar__ficheropdfc_SEARCH()');
+        document.getElementById("label_nuevo_FicheropdfC").style.display = 'none';
+        document.getElementById("nuevo_FicheropdfC").style.display = 'none';
+        document.getElementById("link_FicheropdfC").style.display = 'none';
 
         await this.peticionBackGeneral('', 'area', 'SEARCH')
         .then((respuesta) => {
@@ -187,17 +222,16 @@ class Gestion_congreso extends GestionEntidad{
 
     }
 
-//------------------------------------------------------------------------------------------------------------
+//Submits---------------------------------------------------------------------------------------
 
     static comprobar_submit(){
 
-        let valor1 = this.comprobar_codigoc_programa();
-        let valor2 = this.comprobar_nombrec_programa();
-        let valor3 = this.comprobar_acronimoc_programa();
-        let valor4 = this.comprobar_anhoc_programa();
-        let valor5 = this.comprobar_lugarc_programa();
-        let valor6 = this.comprobar_ficheropdfc_programa();
-
+        let valor1 = this.comprobar_codigoc();
+        let valor2 = this.comprobar_nombrec();
+        let valor3 = this.comprobar_acronimoc();
+        let valor4 = this.comprobar_anhoc();
+        let valor5 = this.comprobar_lugarc();
+        let valor6 = this.comprobar_nuevo_ficheropdfc();
 
         let resultado = (
             valor1 &&
@@ -211,7 +245,49 @@ class Gestion_congreso extends GestionEntidad{
         
     }
 
-//-------------------------------------------------------------------------------------------------------------
+    static comprobar_submit_EDIT(){
+
+        let valor1 = this.comprobar_codigoc();
+        let valor2 = this.comprobar_nombrec();
+        let valor3 = this.comprobar_acronimoc();
+        let valor4 = this.comprobar_anhoc();
+        let valor5 = this.comprobar_lugarc();
+        let valor6 = this.comprobar_nuevo_ficheropdfc_EDIT();
+
+        let resultado = (
+            valor1 &&
+            valor2 &&
+            valor3 &&
+            valor4 &&
+            valor5 &&
+            valor6 
+        );
+        return resultado;
+        
+    }
+
+    static comprobar_submit_SEARCH(){
+
+        let valor1 = this.comprobar_codigoc_SEARCH();
+        let valor2 = this.comprobar_nombrec_SEARCH();
+        let valor3 = this.comprobar_acronimoc_SEARCH();
+        let valor4 = this.comprobar_anhoc_SEARCH();
+        let valor5 = this.comprobar_lugarc_SEARCH();
+        let valor6 = this.comprobar_ficheropdfc_SEARCH();
+
+        let resultado = (
+            valor1 &&
+            valor2 &&
+            valor3 &&
+            valor4 &&
+            valor5 &&
+            valor6 
+        );
+        return resultado;
+        
+    }
+
+//Back-----------------------------------------------------------------------------------
 
     static async ADD(){
         await this.peticionBackGeneral('IU_form', 'congreso', 'ADD')
@@ -263,7 +339,7 @@ class Gestion_congreso extends GestionEntidad{
         });
     }
 
-//----------------------------------------------------------------------
+//Validaciones----------------------------------------------------------------------
 
 static comprobar_codigoc() {
     const c_codigoc = document.getElementById('codigoc').value;
