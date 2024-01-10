@@ -16,7 +16,6 @@ class Gestion_congreso extends GestionEntidad{
         
         document.getElementById('AcronimoC').setAttribute('onblur', 'Gestion_congreso.comprobar_acronimoc()');
         
-        //Estar pendiente por el formato
         document.getElementById('AnhoC').setAttribute('onblur', 'Gestion_congreso.comprobar_anhoc()');
         
         document.getElementById('LugarC').setAttribute('onblur', 'Gestion_congreso.comprobar_lugarc()');
@@ -639,17 +638,48 @@ class Gestion_congreso extends GestionEntidad{
         return true;
     }
 
-//-----------------------------------------------------------------------------
-
 static recargarform(){
 
     document.getElementById("IU_form").innerHTML= '';
     document.getElementById("IU_form").innerHTML=`
-    <label id="label_id_programa" class="label_id_programa"></label>
-        </label>
-        <input type='text' id='id_programa' name='id_programa'></input>
-        <div id="div_error_id_programa" class="errorcampo"><a id="error_id_programa"></a></div>
-        <br>`;
+    
+    <label class="label_CodigoC">Codigo de congreso: </label>
+    <input type='text' id='CodigoC' name='CodigoC'></input>
+    <div id="div_error_CodigoC" class="errorcampo"><a id="error_CodigoC"></a></div>
+    <br>
+
+    <label class="label_NombreC">Nombre del congreso: </label>
+    <input type='text' id='NombreC' name='NombreC'></input>
+    <div id="div_error_NombreC" class="errorcampo"><a id="error_NombreC"></a></div>
+    <br>
+
+    <label class="label_AcronimoC">Acronimo del congreso: </label>
+    <input type='text' id='AcronimoC' name='AcronimoC'></input>
+    <div id="div_error_AcronimoC" class="errorcampo"><a id="error_AcronimoC"></a></div>
+    <br>
+
+    <label class="label_AnhoC">Fecha del congreso: </label>
+    <input type='text' id='AnhoC' name='AnhoC'></input>
+    <div id="div_error_AnhoC" class="errorcampo"><a id="error_AnhoC"></a></div>
+    <br>
+
+    <label class="label_LugarC">Lugar del congreso: </label>
+    <input type='text' id='LugarC' name='LugarC'></input>
+    <div id="div_error_LugarC" class="errorcampo"><a id="error_LugarC"></a></div>
+    <br>
+
+    <label id="label_FicheropdfC" class="label_FicheropdfC">Fichero PDF del congreso: </label>
+    <input type='text' id='FicheropdfC' name='FicheropdfC'></input>
+    <a id="link_FicheropdfC" href="http://193.147.87.202/ET2/filesuploaded/files_FicheropdfC/"><img src="./iconos/FILE.png" />
+
+    <div id="div_error_FicheropdfC" class="errorcampo"><a id="error_FicheropdfC"></a></div>
+        
+    <label id="label_nuevo_FicheropdfC" class="label_nuevo_FicheropdfC">Nuevo fichero pdf del congreso: </label>
+    <input type='file' id='nuevo_FicheropdfC' name='nuevo_FicheropdfC'></input>
+    <div id="div_error_nuevo_FicheropdfC" class="errorcampo"><a id="error_nuevo_FicheropdfC"></a></div>
+    <br>
+
+    `;
 
         let campos = document.forms['IU_form'].elements;
         for (let i = 0; i < campos.length; i++) {
