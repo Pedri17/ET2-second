@@ -40,6 +40,14 @@ class validacionesAtomicas{
         }
     }
 
+    static no_acentos(id){
+        if (/^[A-Za-z]+$/.test(document.getElementById(id)) == true){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     static size_adecuado(id, peso){
         const fileInput = document.getElementById(id);
         const file = fileInput.files[0].size; 

@@ -341,7 +341,7 @@ class Gestion_congreso extends GestionEntidad{
 
 //Validaciones----------------------------------------------------------------------
 
-    //Validaciones de CodigoC
+    //Validaciones de CodigoC:
     static comprobar_codigoc() {
 
         if (ValidacionesAtomicas.size_minimo('codigoc', 4)) {
@@ -384,7 +384,7 @@ class Gestion_congreso extends GestionEntidad{
         return true;
     }
 
-    //Validaciones de NombreC
+    //Validaciones de NombreC:
     static comprobar_nombrec() {
 
         if (ValidacionesAtomicas.size_minimo('nombrec', 2)) {
@@ -426,6 +426,51 @@ class Gestion_congreso extends GestionEntidad{
         DOM_class.exito('nombrec');
         return true;
     }
+
+    //Validaciones de AcronimoC:
+    static comprobar_acronimoc() {
+
+        if (ValidacionesAtomicas.size_minimo('acronimoc', 2)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('acronimoc', 'KO_acronimoc_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('acronimoc', 20)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('acronimoc', 'KO_acronimoc_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.no_acentos('acronimoc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('acronimoc','KO_acronimoc_no_acentos');
+            return false;
+        }
+        DOM_class.exito('acronimoc');
+        return true;
+    }
+
+    static comprobar_acronimoc_SERACH() {
+
+        if (ValidacionesAtomicas.es_vacio('acronimoc')) {
+        } else {
+            DOM_class.mostrarexitovalor('acronimoc');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('acronimoc', 20)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('acronimoc', 'KO_acronimoc_tam_max');
+            DOM_class.mostrarerrorvalor('acronimoc');
+            return false;
+        }
+        if(ValidacionesAtomicas.no_acentos('acronimoc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('acronimoc','KO_acronimoc_no_acentos');
+            DOM_class.mostrarerrorvalor('acronimoc');
+            return false;
+        }
+        DOM_class.exito('acronimoc');
+        return true;
+    }
+
+    //Validaciones de AnhoC
 
 //-----------------------------------------------------------------------------
 
