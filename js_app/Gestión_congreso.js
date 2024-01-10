@@ -343,17 +343,38 @@ class Gestion_congreso extends GestionEntidad{
 
 static comprobar_codigoc() {
     const c_codigoc = document.getElementById('codigoc').value;
-    if (validacionesAtomicas.size_minimo('codigoc', 1)) {
+    if (ValidacionesAtomicas.size_minimo('codigoc', 4)) {
     } else {
-        DOM_class.mostrardivmensajeserrordebajo('codigoc', 'codigoc_min_ERR');
+        DOM_class.mostrardivmensajeserrordebajo('codigoc', 'KO_codigoc_tam_min');
         return false;
-    } if (validacionesAtomicas.size_maximo('codigoc', 6)) {
+    } if (ValidacionesAtomicas.size_maximo('codigoc', 11)) {
     } else {
-        DOM_class.mostrardivmensajeserrordebajo('codigoc', 'codigoc_max_ERR');
+        DOM_class.mostrardivmensajeserrordebajo('codigoc', 'KO_codigoc_tam_max');
         return false;
-    } if (/^[0-9]+$/.test(codigoc)) {
+    }
+    if(ValidacionesAtomicas.solo_numeros('codigoc')){
     } else {
-        DOM_class.mostrardivmensajeserrordebajo('codigoc', 'codigoc_formato_ERR');
+        DOM_class.mostrardivmensajeserrordebajo('codigoc','KO_codigoc_numeros');
+        return false;
+    }
+    DOM_class.exito('codigoc');
+    return true;
+}
+
+static comprobar_codigoc_SEARCH() {
+    const c_codigoc = document.getElementById('codigoc').value;
+    if (ValidacionesAtomicas.es_vacio('codigoc')) {
+    } else {
+        DOM_class.mostrarexitovalor('codigoc');
+        return true;
+    } if (ValidacionesAtomicas.size_maximo('codigoc', 11)) {
+    } else {
+        DOM_class.mostrardivmensajeserrordebajo('codigoc', 'KO_codigoc_tam_max');
+        return false;
+    }
+    if(ValidacionesAtomicas.solo_numeros('codigoc')){
+    } else {
+        DOM_class.mostrardivmensajeserrordebajo('codigoc','KO_codigoc_numeros');
         return false;
     }
     DOM_class.exito('codigoc');
