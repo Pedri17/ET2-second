@@ -32,6 +32,14 @@ class validacionesAtomicas{
         }
     }
 
+    static solo_ñ_espacios(id){
+        if (/^[A-Za-zÁ-Úá-úñÑ\s]+$/.test(document.getElementById(id)) == true){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     static size_adecuado(id, peso){
         const fileInput = document.getElementById(id);
         const file = fileInput.files[0].size; 

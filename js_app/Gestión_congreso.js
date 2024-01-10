@@ -341,45 +341,91 @@ class Gestion_congreso extends GestionEntidad{
 
 //Validaciones----------------------------------------------------------------------
 
-static comprobar_codigoc() {
-    const c_codigoc = document.getElementById('codigoc').value;
-    if (ValidacionesAtomicas.size_minimo('codigoc', 4)) {
-    } else {
-        DOM_class.mostrardivmensajeserrordebajo('codigoc', 'KO_codigoc_tam_min');
-        return false;
-    } if (ValidacionesAtomicas.size_maximo('codigoc', 11)) {
-    } else {
-        DOM_class.mostrardivmensajeserrordebajo('codigoc', 'KO_codigoc_tam_max');
-        return false;
-    }
-    if(ValidacionesAtomicas.solo_numeros('codigoc')){
-    } else {
-        DOM_class.mostrardivmensajeserrordebajo('codigoc','KO_codigoc_numeros');
-        return false;
-    }
-    DOM_class.exito('codigoc');
-    return true;
-}
+    //Validaciones de CodigoC
+    static comprobar_codigoc() {
 
-static comprobar_codigoc_SEARCH() {
-    const c_codigoc = document.getElementById('codigoc').value;
-    if (ValidacionesAtomicas.es_vacio('codigoc')) {
-    } else {
-        DOM_class.mostrarexitovalor('codigoc');
+        if (ValidacionesAtomicas.size_minimo('codigoc', 4)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('codigoc', 'KO_codigoc_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('codigoc', 11)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('codigoc', 'KO_codigoc_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.solo_numeros('codigoc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('codigoc','KO_codigoc_numeros');
+            return false;
+        }
+        DOM_class.exito('codigoc');
         return true;
-    } if (ValidacionesAtomicas.size_maximo('codigoc', 11)) {
-    } else {
-        DOM_class.mostrardivmensajeserrordebajo('codigoc', 'KO_codigoc_tam_max');
-        return false;
     }
-    if(ValidacionesAtomicas.solo_numeros('codigoc')){
-    } else {
-        DOM_class.mostrardivmensajeserrordebajo('codigoc','KO_codigoc_numeros');
-        return false;
+
+    static comprobar_codigoc_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('codigoc')) {
+        } else {
+            DOM_class.mostrarexitovalor('codigoc');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('codigoc', 11)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('codigoc', 'KO_codigoc_tam_max');
+            DOM_class.mostrarerrorvalor('codigoc');
+            return false;
+        }
+        if(ValidacionesAtomicas.solo_numeros('codigoc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('codigoc','KO_codigoc_numeros');
+            DOM_class.mostrarerrorvalor('codigoc');
+            return false;
+        }
+        DOM_class.exito('codigoc');
+        return true;
     }
-    DOM_class.exito('codigoc');
-    return true;
-}
+
+    //Validaciones de NombreC
+    static comprobar_nombrec() {
+
+        if (ValidacionesAtomicas.size_minimo('nombrec', 2)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nombrec', 'KO_nombrec_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('nombrec', 100)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nombrec', 'KO_nombrec_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.solo_ñ_espacios('nombrec')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nombrec','KO_nombrec_solo_ñ_espacios');
+            return false;
+        }
+        DOM_class.exito('nombrec');
+        return true;
+    }
+
+    static comprobar_nombrec_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('nombrec')) {
+        } else {
+            DOM_class.mostrarexitovalor('nombrec');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('nombrec', 100)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nombrec', 'KO_nombrec_tam_max');
+            DOM_class.mostrarerrorvalor('nombrec');
+            return false;
+        }
+        if(ValidacionesAtomicas.solo_ñ_espacios('nombrec')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nombrec','KO_nombrec_solo_ñ_espacios');
+            DOM_class.mostrarerrorvalor('nombrec');
+            return false;
+        }
+        DOM_class.exito('nombrec');
+        return true;
+    }
 
 //-----------------------------------------------------------------------------
 
