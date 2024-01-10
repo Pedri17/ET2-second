@@ -26,19 +26,6 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById("FicheropdfC").style.display = 'none';
         document.getElementById("link_FicheropdfC").style.display = 'none';
 
-        //Preguntar por este bloque antes de los lets
-        await this.peticionBackGeneral('', 'area', 'SEARCH')
-        .then((respuesta) => {
-            console.log(respuesta);
-            let listaareas = respuesta['resource'];
-            listaareas.forEach(element => {
-                let opcion = document.createElement('option');
-                opcion.value = element['id_area'];
-                opcion.innerHTML = element['nombre_area'];
-                document.getElementById('area').append(opcion);
-            }); 
-        });
-
         let botonadd = document.createElement('button');
         botonadd.type = 'submit';
         let imgadd = document.createElement('img');
@@ -61,7 +48,7 @@ class Gestion_congreso extends GestionEntidad{
 
         document.getElementById('CodigoC').setAttribute('onblur', 'Gestion_programa.comprobar_codigoc()');
         document.getElementById('CodigoC').value = CodigoC;
-        //document.getElementById('id_programa').setAttribute("readonly","");??
+        document.getElementById('CodigoC').setAttribute("readonly","");
 
         document.getElementById('NombreC').setAttribute('onblur', 'Gestion_programa.comprobar_nombrec()');
         document.getElementById('NombreC').value = NombreC;
@@ -80,19 +67,6 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById('FicheropdfC').setAttribute("readonly",true);
 
         document.getElementById('nuevo_FicheropdfC').setAttribute('onblur','Gestion_programa.comprobar_nuevo_FicheropdfC()');
-
-
-        await this.peticionBackGeneral('', 'area', 'SEARCH')
-        .then((respuesta) => {
-            console.log(respuesta);
-            let listaareas = respuesta['resource'];
-            listaareas.forEach(element => {
-                let opcion = document.createElement('option');
-                opcion.value = element['id_area'];
-                opcion.innerHTML = element['nombre_area'];
-                document.getElementById('area').append(opcion);
-            }); 
-        });
 
         let botonadd = document.createElement('button');
         botonadd.type = 'submit';
@@ -134,18 +108,6 @@ class Gestion_congreso extends GestionEntidad{
 
         document.getElementById("label_nuevo_FicheropdfC").style.display = 'none';
         document.getElementById("nuevo_FicheropdfC").style.display = 'none';
-
-        await this.peticionBackGeneral('', 'area', 'SEARCH')
-        .then((respuesta) => {
-            console.log(respuesta);
-            let listaareas = respuesta['resource'];
-            listaareas.forEach(element => {
-                let opcion = document.createElement('option');
-                opcion.value = element['id_area'];
-                opcion.innerHTML = element['nombre_area'];
-                document.getElementById('area').append(opcion);
-            }); 
-        });
 
         let botonadd = document.createElement('button');
         botonadd.type = 'submit';
@@ -195,18 +157,6 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById("label_nuevo_FicheropdfC").style.display = 'none';
         document.getElementById("nuevo_FicheropdfC").style.display = 'none';
         document.getElementById("link_FicheropdfC").style.display = 'none';
-
-        await this.peticionBackGeneral('', 'area', 'SEARCH')
-        .then((respuesta) => {
-            console.log(respuesta);
-            let listaareas = respuesta['resource'];
-            listaareas.forEach(element => {
-                let opcion = document.createElement('option');
-                opcion.value = element['id_area'];
-                opcion.innerHTML = element['nombre_area'];
-                document.getElementById('area').append(opcion);
-            }); 
-        });
 
         let botonadd = document.createElement('button');
         botonadd.type = 'submit';
@@ -519,8 +469,6 @@ class Gestion_congreso extends GestionEntidad{
     static comprobar_nuevo_ficheropdfc(){
         if(validacionesatomicas.size_minimo_extension('nuevo_ficheropdfc',1)){
         } else {
-            //Este alert por la cara???
-            alert("entra en el malo");
             DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdfc','KO_nuevo_ficheropdfc_tam_min');
             return false;
         }

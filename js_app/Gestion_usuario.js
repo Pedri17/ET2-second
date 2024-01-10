@@ -69,6 +69,7 @@ class Gestion_usuario extends GestionEntidad{
 
         document.getElementById('LoginU').setAttribute('onblur', 'Gestion_programa.comprobar_loginu()');
         document.getElementById('LoginU').value = LoginU;
+        document.getElementById('LoginU').setAttribute("readonly","");
 
         document.getElementById('PasswordU').setAttribute('onblur', 'Gestion_programa.comprobar_passwordu()');
         document.getElementById('PasswordU').value = PasswordU;
