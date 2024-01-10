@@ -48,6 +48,10 @@ class validacionesAtomicas{
         }
     }
 
+    static formato_fecha_correcto(id){
+        
+    }
+
     static size_adecuado(id, peso){
         const fileInput = document.getElementById(id);
         const file = fileInput.files[0].size; 

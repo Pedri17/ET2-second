@@ -472,6 +472,50 @@ class Gestion_congreso extends GestionEntidad{
 
     //Validaciones de AnhoC
 
+
+    //Validaciones de LugarC
+    static comprobar_lugarc() {
+
+        if (ValidacionesAtomicas.size_minimo('lugarc', 2)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('lugarc', 'KO_lugarc_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('lugarc', 20)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('lugarc', 'KO_lugarc_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.solo_ñ_espacios('lugarc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('lugarc','KO_lugarc_solo_ñ_espacios');
+            return false;
+        }
+        DOM_class.exito('lugarc');
+        return true;
+    }
+
+    static comprobar_lugarc_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('lugarc')) {
+        } else {
+            DOM_class.mostrarexitovalor('lugarc');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('lugarc', 20)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('lugarc', 'KO_lugarc_tam_max');
+            DOM_class.mostrarerrorvalor('lugarc');
+            return false;
+        }
+        if(ValidacionesAtomicas.solo_ñ_espacios('lugarc')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('lugarc','KO_lugarc_solo_ñ_espacios');
+            DOM_class.mostrarerrorvalor('lugarc');
+            return false;
+        }
+        DOM_class.exito('lugarc');
+        return true;
+    }
+
 //-----------------------------------------------------------------------------
 
 static recargarform(){
