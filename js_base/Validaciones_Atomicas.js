@@ -87,7 +87,7 @@ class validacionesatomicas{
     }
 
     static no_acentos_ñ_espacios_fich(id){
-        if (/^[A-Za-z.]+$/.test(document.getElementById(id)) == true){
+        if (/^[A-Za-z.\\\/]+$/.test(document.getElementById(id)) == true){
             return true;
         } else {
             return false;

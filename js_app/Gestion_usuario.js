@@ -1,40 +1,40 @@
 class Gestion_usuario extends GestionEntidad{
-    static resetearformcongreso() {
+    static resetearformusuario() {
         GestionEntidad.resetearForm();
     }
 
 //Formularios------------------------------------------------------------------------------------
     static async createForm_ADD(){
         this.recargarform();
-        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_ADD_programa";  
-        document.getElementById('IU_form').action = 'javascript:Gestion_congreso.ADD();';
-        document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_congreso.comprobar_submit();');
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_ADD_usuario";  
+        document.getElementById('IU_form').action = 'javascript:Gestion_usuario.ADD();';
+        document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_usuario.comprobar_submit();');
 
-        document.getElementById('login_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_login_usuario()');
+        document.getElementById('login_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_login_usuario()');
 
-        document.getElementById('password_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_password_usuario()');
+        document.getElementById('password_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_password_usuario()');
         
-        document.getElementById('nombre_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_nombre_usuario()');
+        document.getElementById('nombre_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_nombre_usuario()');
         
-        document.getElementById('apellidos_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_apellidos_usuario()');
+        document.getElementById('apellidos_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_apellidos_usuario()');
         
-        document.getElementById('tituloacademico_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_tituloacademico_usuario()');
+        document.getElementById('tituloacademico_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tituloacademico_usuario()');
 
-        document.getElementById('tipocontrato_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_tipocontrato_usuario()');
+        document.getElementById('tipocontrato_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tipocontrato_usuario()');
         
-        document.getElementById('centro_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_centro_usuario()');
+        document.getElementById('centro_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_centro_usuario()');
 
-        document.getElementById('departamento_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_departamento_usuario()');
+        document.getElementById('departamento_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_departamento_usuario()');
 
-        document.getElementById('universidad_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_universidad_usuario()');
+        document.getElementById('universidad_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_universidad_usuario()');
 
-        document.getElementById('nueva_foto_usuario').setAttribute('onblur','Gestion_programa.comprobar_nueva_foto_usuario()');
+        document.getElementById('nueva_foto_usuario').setAttribute('onblur','Gestion_usuario.comprobar_nueva_foto_usuario()');
         
         document.getElementById("label_foto_usuario").style.display = 'none';
         document.getElementById("foto_usuario").style.display = 'none';
         document.getElementById("link_foto_usuario").style.display = 'none';
 
-        document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_tipo_usuario()');
+        document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tipo_usuario()');
 
         await this.peticionBackGeneral('', 'area', 'SEARCH')
         .then((respuesta) => {
@@ -63,45 +63,45 @@ class Gestion_usuario extends GestionEntidad{
 
     static async createForm_EDIT(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario){
         this.recargarform();
-        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_EDIT_programa";
-        document.getElementById('IU_form').action = 'javascript:Gestion_programa.EDIT();';
-        document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_programa.comprobar_submit_EDIT();');
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_EDIT_usuario";
+        document.getElementById('IU_form').action = 'javascript:Gestion_usuario.EDIT();';
+        document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_usuario.comprobar_submit_EDIT();');
 
-        document.getElementById('login_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_login_usuario()');
+        document.getElementById('login_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_login_usuario()');
         document.getElementById('login_usuario').value = login_usuario;
         document.getElementById('login_usuario').setAttribute("readonly","");
 
-        document.getElementById('password_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_password_usuario()');
+        document.getElementById('password_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_password_usuario()');
         document.getElementById('password_usuario').value = password_usuario;
 
-        document.getElementById('nombre_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_nombre_usuario()');
+        document.getElementById('nombre_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_nombre_usuario()');
         document.getElementById('nombre_usuario').value = nombre_usuario;
 
-        document.getElementById('apellidos_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_apellidos_usuario()');
+        document.getElementById('apellidos_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_apellidos_usuario()');
         document.getElementById('apellidos_usuario').value = apellidos_usuario;
 
-        document.getElementById('tituloacademico_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tituloacademico_usuario()');
+        document.getElementById('tituloacademico_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tituloacademico_usuario()');
         document.getElementById('tituloacademico_usuario').value = tituloacademico_usuario;
 
-        document.getElementById('tipocontrato_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tipocontrato_usuario()');
+        document.getElementById('tipocontrato_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tipocontrato_usuario()');
         document.getElementById('tipocontrato_usuario').value = tipocontrato_usuario;
 
-        document.getElementById('centro_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_centro_usuario()');
+        document.getElementById('centro_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_centro_usuario()');
         document.getElementById('centro_usuario').value = centro_usuario;
 
-        document.getElementById('departamento_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_departamento_usuario()');
+        document.getElementById('departamento_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_departamento_usuario()');
         document.getElementById('departamento_usuario').value = departamento_usuario;
 
-        document.getElementById('universidad_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_universidad_usuario()');
+        document.getElementById('universidad_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_universidad_usuario()');
         document.getElementById('universidad_usuario').value = universidad_usuario;
 
         document.getElementById('foto_usuario').value = foto_usuario;
         document.getElementById('link_foto_usuario').setAttribute('href','http://193.147.87.202/ET2/filesuploaded/files_foto_usuario/'+foto_usuario.value);
         document.getElementById('foto_usuario').setAttribute("readonly",true);
 
-        document.getElementById('nueva_foto_usuario').setAttribute('onblur','Gestion_programa.comprobar_nueva_foto_usuario()');
+        document.getElementById('nueva_foto_usuario').setAttribute('onblur','Gestion_usuario.comprobar_nueva_foto_usuario()');
 
-        document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tipo_usuario()');
+        document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tipo_usuario()');
         document.getElementById('tipo_usuario').value = tipo_usuario;
 
         await this.peticionBackGeneral('', 'area', 'SEARCH')
@@ -131,8 +131,8 @@ class Gestion_usuario extends GestionEntidad{
 
     static async createForm_DELETE(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario){
         this.recargarform();
-        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_DELETE_programa";
-        document.getElementById('IU_form').action = 'javascript:Gestion_programa.DELETE();';
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_DELETE_usuario";
+        document.getElementById('IU_form').action = 'javascript:Gestion_usuario.DELETE();';
 
         document.getElementById('login_usuario').value = login_usuario;
         document.getElementById('login_usuario').setAttribute('readonly',true);
@@ -201,7 +201,7 @@ class Gestion_usuario extends GestionEntidad{
     static async createForm_SHOWCURRENT(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario){
         this.createForm_DELETE(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario);
 
-        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_SHOWCURRENT_programa";
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_SHOWCURRENT_usuario";
         document.getElementById('botondelete').remove();
 
         let imgshowcurrent = document.createElement('img');
@@ -214,34 +214,34 @@ class Gestion_usuario extends GestionEntidad{
 
     static async createForm_SEARCH(){
 
-        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_SEARCH_programa"; 
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_SEARCH_usuario"; 
         this.recargarform();
-        document.getElementById('IU_form').action = 'javascript:Gestion_programa.SEARCH();';
-        document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_programa.comprobar_submit_SEARCH();');
+        document.getElementById('IU_form').action = 'javascript:Gestion_usuario.SEARCH();';
+        document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_usuario.comprobar_submit_SEARCH();');
 
-        document.getElementById('login_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_login_usuario_SEARCH()');
+        document.getElementById('login_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_login_usuario_SEARCH()');
         
-        document.getElementById('password_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_password_usuario_SEARCH()');
+        document.getElementById('password_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_password_usuario_SEARCH()');
         
-        document.getElementById('nombre_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_nombre_usuario_SEARCH()');
+        document.getElementById('nombre_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_nombre_usuario_SEARCH()');
         
-        document.getElementById('apellidos_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_apellidos_usuario_SEARCH()');
+        document.getElementById('apellidos_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_apellidos_usuario_SEARCH()');
         
-        document.getElementById('tituloacademico_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tituloacademico_usuario_SEARCH()');
+        document.getElementById('tituloacademico_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tituloacademico_usuario_SEARCH()');
 
-        document.getElementById('tipocontrato_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tipocontrato_usuario_SEARCH()');
+        document.getElementById('tipocontrato_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tipocontrato_usuario_SEARCH()');
         
-        document.getElementById('centro_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_centro_usuario_SEARCH()');
+        document.getElementById('centro_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_centro_usuario_SEARCH()');
         
-        document.getElementById('departamento_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_departamento_usuario_SEARCH()');
+        document.getElementById('departamento_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_departamento_usuario_SEARCH()');
         
-        document.getElementById('universidad_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_universidad_usuario_SEARCH()');
+        document.getElementById('universidad_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_universidad_usuario_SEARCH()');
 
         document.getElementById("label_nueva_foto_usuario").style.display = 'none';
         document.getElementById("nueva_foto_usuario").style.display = 'none';
         document.getElementById("link_foto_usuario").style.display = 'none';
 
-        document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tipo_usuario_SEARCH()');
+        document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tipo_usuario_SEARCH()');
 
         await this.peticionBackGeneral('', 'area', 'SEARCH')
         .then((respuesta) => {
@@ -366,7 +366,7 @@ class Gestion_usuario extends GestionEntidad{
 //Back-----------------------------------------------------------------------------------
 
 static async ADD(){
-    await this.peticionBackGeneral('IU_form', 'congreso', 'ADD')
+    await this.peticionBackGeneral('IU_form', 'usuario', 'ADD')
     .then((respuesta) => {
         if (respuesta['ok']){
             this.recargarform();
@@ -379,10 +379,10 @@ static async ADD(){
 }
 
 static async EDIT(){
-    await this.peticionBackGeneral('IU_form', 'congreso', 'EDIT')
+    await this.peticionBackGeneral('IU_form', 'usuario', 'EDIT')
     .then((respuesta) => {
         if (respuesta['ok']){
-            this.resetearformcongreso();
+            this.resetearformusuario();
             this.SEARCH();
         }
         else{
@@ -392,10 +392,10 @@ static async EDIT(){
 }
 
 static async DELETE(){
-    await this.peticionBackGeneral('IU_form', 'congreso', 'DELETE')
+    await this.peticionBackGeneral('IU_form', 'usuario', 'DELETE')
     .then((respuesta) => {
         if (respuesta['ok']){
-            this.resetearformcongreso();
+            this.resetearformusuario();
             this.SEARCH();
         }
         else{
@@ -405,10 +405,10 @@ static async DELETE(){
 }
 
 static async SEARCH(){
-    await this.peticionBackGeneral('IU_form', 'congreso', 'SEARCH')
+    await this.peticionBackGeneral('IU_form', 'usuario', 'SEARCH')
     .then((respuesta) => {
         this.recargarform();
-        let congreso = new Gestion_programa('congresos',respuesta['resource'],Array('dni','nombre_congreso')); congreso.mostrarTabla();
+        let usuario = new Gestion_usuario('usuarios',respuesta['resource'],Array('login_usuario')); usuario.mostrarTabla();
         if (respuesta['code'] == 'RECORDSET_VACIO'){
             document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
         }
@@ -420,16 +420,16 @@ static async SEARCH(){
     //Validaciones de LoginU:
     static comprobar_login_usuario() {
 
-        if (ValidacionesAtomicas.size_minimo('login_usuario', 4)) {
+        if (validacionesatomicas.size_minimo('login_usuario', 4)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('login_usuario', 'KO_login_usuario_tam_min');
             return false;
-        } if (ValidacionesAtomicas.size_maximo('login_usuario', 15)) {
+        } if (validacionesatomicas.size_maximo('login_usuario', 15)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('login_usuario', 'KO_login_usuario_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios_numeros('login_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios_numeros('login_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('login_usuario','KO_login_usuario_acentos_ñ_espacios_numeros');
             return false;
@@ -440,17 +440,17 @@ static async SEARCH(){
 
     static comprobar_login_usuario_SEARCH() {
 
-        if (ValidacionesAtomicas.es_vacio('login_usuario')) {
+        if (validacionesatomicas.es_vacio('login_usuario')) {
         } else {
             DOM_class.mostrarexitovalor('login_usuario');
             return true;
-        } if (ValidacionesAtomicas.size_maximo('login_usuario', 15)) {
+        } if (validacionesatomicas.size_maximo('login_usuario', 15)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('login_usuario', 'KO_login_usuario_tam_max');
             DOM_class.mostrarerrorvalor('login_usuario');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios_numeros('login_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios_numeros('login_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('login_usuario','KO_login_usuario_acentos_ñ_espacios_numeros');
             DOM_class.mostrarerrorvalor('login_usuario');
@@ -463,16 +463,16 @@ static async SEARCH(){
     //Validaciones de PasswordU:
     static comprobar_password_usuario() {
 
-        if (ValidacionesAtomicas.size_minimo('password_usuario', 3)) {
+        if (validacionesatomicas.size_minimo('password_usuario', 3)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('password_usuario', 'KO_password_usuario_tam_min');
             return false;
-        } if (ValidacionesAtomicas.size_maximo('password_usuario', 32)) {
+        } if (validacionesatomicas.size_maximo('password_usuario', 32)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('password_usuario', 'KO_password_usuario_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios_numeros('password_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios_numeros('password_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('password_usuario','KO_password_usuario_acentos_ñ_espacios_numeros');
             return false;
@@ -483,17 +483,17 @@ static async SEARCH(){
 
     static comprobar_password_usuario_SEARCH() {
 
-        if (ValidacionesAtomicas.es_vacio('password_usuario')) {
+        if (validacionesatomicas.es_vacio('password_usuario')) {
         } else {
             DOM_class.mostrarexitovalor('password_usuario');
             return true;
-        } if (ValidacionesAtomicas.size_maximo('password_usuario', 32)) {
+        } if (validacionesatomicas.size_maximo('password_usuario', 32)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('password_usuario', 'KO_password_usuario_tam_max');
             DOM_class.mostrarerrorvalor('password_usuario');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios_numeros('password_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios_numeros('password_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('password_usuario','KO_password_usuario_acentos_ñ_espacios_numeros');
             DOM_class.mostrarerrorvalor('password_usuario');
@@ -506,16 +506,16 @@ static async SEARCH(){
     //Validaciones de NombreU:
     static comprobar_nombre_usuario() {
 
-        if (ValidacionesAtomicas.size_minimo('nombre_usuario', 2)) {
+        if (validacionesatomicas.size_minimo('nombre_usuario', 2)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('nombre_usuario', 'KO_nombre_usuario_tam_min');
             return false;
-        } if (ValidacionesAtomicas.size_maximo('nombre_usuario', 15)) {
+        } if (validacionesatomicas.size_maximo('nombre_usuario', 15)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('nombre_usuario', 'KO_nombre_usuario_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios('nombre_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios('nombre_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('nombre_usuario','KO_nombre_usuario_acentos_ñ_espacios');
             return false;
@@ -526,17 +526,17 @@ static async SEARCH(){
 
     static comprobar_nombre_usuario_SEARCH() {
 
-        if (ValidacionesAtomicas.es_vacio('nombre_usuario')) {
+        if (validacionesatomicas.es_vacio('nombre_usuario')) {
         } else {
             DOM_class.mostrarexitovalor('nombre_usuario');
             return true;
-        } if (ValidacionesAtomicas.size_maximo('nombre_usuario', 15)) {
+        } if (validacionesatomicas.size_maximo('nombre_usuario', 15)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('nombre_usuario', 'KO_nombre_usuario_tam_max');
             DOM_class.mostrarerrorvalor('nombre_usuario');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios('nombre_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios('nombre_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('nombre_usuario','KO_nombre_usuario_acentos_ñ_espacios');
             DOM_class.mostrarerrorvalor('nombre_usuario');
@@ -549,16 +549,16 @@ static async SEARCH(){
     //Validaciones de ApellidosU:
     static comprobar_apellidos_usuario() {
 
-        if (ValidacionesAtomicas.size_minimo('apellidos_usuario', 3)) {
+        if (validacionesatomicas.size_minimo('apellidos_usuario', 3)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario', 'KO_apellidos_usuario_tam_min');
             return false;
-        } if (ValidacionesAtomicas.size_maximo('apellidos_usuario', 30)) {
+        } if (validacionesatomicas.size_maximo('apellidos_usuario', 30)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario', 'KO_apellidos_usuario_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios('apellidos_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios('apellidos_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario','KO_apellidos_usuario_acentos_ñ_espacios');
             return false;
@@ -569,17 +569,17 @@ static async SEARCH(){
 
     static comprobar_apellidos_usuario_SEARCH() {
 
-        if (ValidacionesAtomicas.es_vacio('apellidos_usuario')) {
+        if (validacionesatomicas.es_vacio('apellidos_usuario')) {
         } else {
             DOM_class.mostrarexitovalor('apellidos_usuario');
             return true;
-        } if (ValidacionesAtomicas.size_maximo('apellidos_usuario', 30)) {
+        } if (validacionesatomicas.size_maximo('apellidos_usuario', 30)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario', 'KO_apellidos_usuario_tam_max');
             DOM_class.mostrarerrorvalor('apellidos_usuario');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios('apellidos_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios('apellidos_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario','KO_apellidos_usuario_acentos_ñ_espacios');
             DOM_class.mostrarerrorvalor('apellidos_usuario');
@@ -592,16 +592,16 @@ static async SEARCH(){
     //Validaciones de TituloAcademicoU:
     static comprobar_tituloacademico_usuario() {
 
-        if (ValidacionesAtomicas.size_minimo('tituloacademico_usuario', 5)) {
+        if (validacionesatomicas.size_minimo('tituloacademico_usuario', 5)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario', 'KO_tituloacademico_usuario_tam_min');
             return false;
-        } if (ValidacionesAtomicas.size_maximo('tituloacademico_usuario', 100)) {
+        } if (validacionesatomicas.size_maximo('tituloacademico_usuario', 100)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario', 'KO_tituloacademico_usuario_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('tituloacademico_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios_puntuacion('tituloacademico_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario','KO_tituloacademico_usuario_acentos_ñ_espacios_puntuacion');
             return false;
@@ -612,17 +612,17 @@ static async SEARCH(){
 
     static comprobar_tituloacademico_usuario_SEARCH() {
 
-        if (ValidacionesAtomicas.es_vacio('tituloacademico_usuario')) {
+        if (validacionesatomicas.es_vacio('tituloacademico_usuario')) {
         } else {
             DOM_class.mostrarexitovalor('tituloacademico_usuario');
             return true;
-        } if (ValidacionesAtomicas.size_maximo('tituloacademico_usuario', 100)) {
+        } if (validacionesatomicas.size_maximo('tituloacademico_usuario', 100)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario', 'KO_tituloacademico_usuario_tam_max');
             DOM_class.mostrarerrorvalor('tituloacademico_usuario');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('tituloacademico_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios_puntuacion('tituloacademico_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario','KO_tituloacademico_usuario_acentos_ñ_espacios_puntuacion');
             DOM_class.mostrarerrorvalor('tituloacademico_usuario');
@@ -635,16 +635,16 @@ static async SEARCH(){
     //Validaciones de TipoContratoU:
     static comprobar_tipocontrato_usuario() {
 
-        if (ValidacionesAtomicas.size_minimo('tipocontrato_usuario', 1)) {
+        if (validacionesatomicas.size_minimo('tipocontrato_usuario', 1)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario', 'KO_tipocontrato_usuario_tam_min');
             return false;
-        } if (ValidacionesAtomicas.size_maximo('tipocontrato_usuario', 40)) {
+        } if (validacionesatomicas.size_maximo('tipocontrato_usuario', 40)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario', 'KO_tipocontrato_usuario_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('tipocontrato_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios_puntuacion('tipocontrato_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario','KO_tipocontrato_usuario_acentos_ñ_espacios_puntuacion');
             return false;
@@ -655,17 +655,17 @@ static async SEARCH(){
 
     static comprobar_tipocontrato_usuario_SEARCH() {
 
-        if (ValidacionesAtomicas.es_vacio('tipocontrato_usuario')) {
+        if (validacionesatomicas.es_vacio('tipocontrato_usuario')) {
         } else {
             DOM_class.mostrarexitovalor('tipocontrato_usuario');
             return true;
-        } if (ValidacionesAtomicas.size_maximo('tipocontrato_usuario', 40)) {
+        } if (validacionesatomicas.size_maximo('tipocontrato_usuario', 40)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario', 'KO_tipocontrato_usuario_tam_max');
             DOM_class.mostrarerrorvalor('tipocontrato_usuario');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('tipocontrato_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios_puntuacion('tipocontrato_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario','KO_tipocontrato_usuario_acentos_ñ_espacios_puntuacion');
             DOM_class.mostrarerrorvalor('tipocontrato_usuario');
@@ -678,16 +678,16 @@ static async SEARCH(){
     //Validaciones de CentroU:
     static comprobar_centro_usuario() {
 
-        if (ValidacionesAtomicas.size_minimo('centro_usuario', 5)) {
+        if (validacionesatomicas.size_minimo('centro_usuario', 5)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('centro_usuario', 'KO_centro_usuario_tam_min');
             return false;
-        } if (ValidacionesAtomicas.size_maximo('centro_usuario', 100)) {
+        } if (validacionesatomicas.size_maximo('centro_usuario', 100)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('centro_usuario', 'KO_centro_usuario_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('centro_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios_puntuacion('centro_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('centro_usuario','KO_centro_usuario_acentos_ñ_espacios_puntuacion');
             return false;
@@ -698,17 +698,17 @@ static async SEARCH(){
 
     static comprobar_centro_usuario_SEARCH() {
 
-        if (ValidacionesAtomicas.es_vacio('centro_usuario')) {
+        if (validacionesatomicas.es_vacio('centro_usuario')) {
         } else {
             DOM_class.mostrarexitovalor('centro_usuario');
             return true;
-        } if (ValidacionesAtomicas.size_maximo('centro_usuario', 100)) {
+        } if (validacionesatomicas.size_maximo('centro_usuario', 100)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('centro_usuario', 'KO_centro_usuario_tam_max');
             DOM_class.mostrarerrorvalor('centro_usuario');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('centro_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios_puntuacion('centro_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('centro_usuario','KO_centro_usuario_acentos_ñ_espacios_puntuacion');
             DOM_class.mostrarerrorvalor('centro_usuario');
@@ -721,16 +721,16 @@ static async SEARCH(){
     //Validaciones de DepartamentoU:
     static comprobar_departamento_usuario() {
 
-        if (ValidacionesAtomicas.size_minimo('departamento_usuario', 5)) {
+        if (validacionesatomicas.size_minimo('departamento_usuario', 5)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('departamento_usuario', 'KO_departamento_usuario_tam_min');
             return false;
-        } if (ValidacionesAtomicas.size_maximo('departamento_usuario', 100)) {
+        } if (validacionesatomicas.size_maximo('departamento_usuario', 100)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('departamento_usuario', 'KO_departamento_usuario_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios('departamento_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios('departamento_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('departamento_usuario','KO_departamento_usuario_acentos_ñ_espacios');
             return false;
@@ -741,17 +741,17 @@ static async SEARCH(){
 
     static comprobar_departamento_usuario_SEARCH() {
 
-        if (ValidacionesAtomicas.es_vacio('departamento_usuario')) {
+        if (validacionesatomicas.es_vacio('departamento_usuario')) {
         } else {
             DOM_class.mostrarexitovalor('departamento_usuario');
             return true;
-        } if (ValidacionesAtomicas.size_maximo('departamento_usuario', 100)) {
+        } if (validacionesatomicas.size_maximo('departamento_usuario', 100)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('departamento_usuario', 'KO_departamento_usuario_tam_max');
             DOM_class.mostrarerrorvalor('departamento_usuario');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios('departamento_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios('departamento_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('departamento_usuario','KO_departamento_usuario_acentos_ñ_espacios');
             DOM_class.mostrarerrorvalor('departamento_usuario');
@@ -764,16 +764,16 @@ static async SEARCH(){
     //Validaciones de UniversidadU:
     static comprobar_universidad_usuario() {
 
-        if (ValidacionesAtomicas.size_minimo('universidad_usuario', 5)) {
+        if (validacionesatomicas.size_minimo('universidad_usuario', 5)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('universidad_usuario', 'KO_universidad_usuario_tam_min');
             return false;
-        } if (ValidacionesAtomicas.size_maximo('universidad_usuario', 40)) {
+        } if (validacionesatomicas.size_maximo('universidad_usuario', 40)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('universidad_usuario', 'KO_universidad_usuario_tam_max');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios('universidad_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios('universidad_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('universidad_usuario','KO_universidad_usuario_acentos_ñ_espacios');
             return false;
@@ -784,17 +784,17 @@ static async SEARCH(){
 
     static comprobar_universidad_usuario_SEARCH() {
 
-        if (ValidacionesAtomicas.es_vacio('universidad_usuario')) {
+        if (validacionesatomicas.es_vacio('universidad_usuario')) {
         } else {
             DOM_class.mostrarexitovalor('universidad_usuario');
             return true;
-        } if (ValidacionesAtomicas.size_maximo('universidad_usuario', 40)) {
+        } if (validacionesatomicas.size_maximo('universidad_usuario', 40)) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('universidad_usuario', 'KO_universidad_usuario_tam_max');
             DOM_class.mostrarerrorvalor('universidad_usuario');
             return false;
         }
-        if(ValidacionesAtomicas.acentos_ñ_espacios('universidad_usuario')){
+        if(validacionesatomicas.acentos_ñ_espacios('universidad_usuario')){
         } else {
             DOM_class.mostrardivmensajeserrordebajo('universidad_usuario','KO_universidad_usuario_acentos_ñ_espacios');
             DOM_class.mostrarerrorvalor('universidad_usuario');
