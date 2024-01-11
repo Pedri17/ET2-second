@@ -718,4 +718,90 @@ static async SEARCH(){
         return true;
     }
 
+    //Validaciones de DepartamentoU:
+    static comprobar_departamento_usuario() {
+
+        if (ValidacionesAtomicas.size_minimo('departamento_usuario', 5)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('departamento_usuario', 'KO_departamento_usuario_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('departamento_usuario', 100)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('departamento_usuario', 'KO_departamento_usuario_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios('departamento_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('departamento_usuario','KO_departamento_usuario_acentos_ñ_espacios');
+            return false;
+        }
+        DOM_class.exito('departamento_usuario');
+        return true;
+    }
+
+    static comprobar_departamento_usuario_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('departamento_usuario')) {
+        } else {
+            DOM_class.mostrarexitovalor('departamento_usuario');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('departamento_usuario', 100)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('departamento_usuario', 'KO_departamento_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('departamento_usuario');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios('departamento_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('departamento_usuario','KO_departamento_usuario_acentos_ñ_espacios');
+            DOM_class.mostrarerrorvalor('departamento_usuario');
+            return false;
+        }
+        DOM_class.exito('departamento_usuario');
+        return true;
+    }
+
+    //Validaciones de UniversidadU:
+    static comprobar_universidad_usuario() {
+
+        if (ValidacionesAtomicas.size_minimo('universidad_usuario', 5)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('universidad_usuario', 'KO_universidad_usuario_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('universidad_usuario', 40)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('universidad_usuario', 'KO_universidad_usuario_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios('universidad_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('universidad_usuario','KO_universidad_usuario_acentos_ñ_espacios');
+            return false;
+        }
+        DOM_class.exito('universidad_usuario');
+        return true;
+    }
+
+    static comprobar_universidad_usuario_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('universidad_usuario')) {
+        } else {
+            DOM_class.mostrarexitovalor('universidad_usuario');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('universidad_usuario', 40)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('universidad_usuario', 'KO_universidad_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('universidad_usuario');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios('universidad_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('universidad_usuario','KO_universidad_usuario_acentos_ñ_espacios');
+            DOM_class.mostrarerrorvalor('universidad_usuario');
+            return false;
+        }
+        DOM_class.exito('universidad_usuario');
+        return true;
+    }
+
 }
