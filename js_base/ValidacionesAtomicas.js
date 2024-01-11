@@ -24,12 +24,42 @@ class validacionesAtomicas{
         }
     }
 
-    static size_minimo_extension(id, minimo){
+    static size_minimo_extension(id, valorminimo){
+        var value = document.getElementById(id).value;
+        var nombre = value;
         
+        if(value != null){
+            if(value.includes("\\")){
+                nombre = value.split("\\")[2];
+            } if(nombre.includes(".")){
+                nombre = nombre.split(".")[0];
+            }
+        }
+
+        if(nombre.length < valorminimo){
+            return false;
+        } else{
+            return true;
+        }
     }
 
-    static size_maximo_extension(id, maximo){
+    static size_maximo_extension(id, valormaximo){
+        var value = document.getElementById(id).value;
+        var nombre = value;
         
+        if(value != null){
+            if(value.includes("\\")){
+                nombre = value.split("\\")[2];
+            } if(nombre.includes(".")){
+                nombre = nombre.split(".")[0];
+            }
+        }
+
+        if(nombre.length > valormaximo){
+            return false;
+        } else{
+            return true;
+        }
     }
 
     static solo_numeros(id){
