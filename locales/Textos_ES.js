@@ -42,7 +42,7 @@ let textos_ES={
 
     //Validaciones:
     'KO_codigo_congreso_tam_min': 'El código del congreso no puede contener menos de 4 caracteres',
-    'KO_codigo_congreso_tam_max': 'El código del congreso no pede contener más de 11 caracteres',
+    'KO_codigo_congreso_tam_max': 'El código del congreso no puede contener más de 11 caracteres',
     'KO_codigo_congreso_numeros': 'El código del congreso solo puede contener dígitos',
 
     'KO_nombre_congreso_tam_min': 'El nombre del congreso no puede contener menos de 2 caracteres',
