@@ -589,4 +589,133 @@ static async SEARCH(){
         return true;
     }
 
+    //Validaciones de TituloAcademicoU:
+    static comprobar_tituloacademico_usuario() {
+
+        if (ValidacionesAtomicas.size_minimo('tituloacademico_usuario', 5)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario', 'KO_tituloacademico_usuario_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('tituloacademico_usuario', 100)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario', 'KO_tituloacademico_usuario_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('tituloacademico_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario','KO_tituloacademico_usuario_acentos_ñ_espacios_puntuacion');
+            return false;
+        }
+        DOM_class.exito('tituloacademico_usuario');
+        return true;
+    }
+
+    static comprobar_tituloacademico_usuario_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('tituloacademico_usuario')) {
+        } else {
+            DOM_class.mostrarexitovalor('tituloacademico_usuario');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('tituloacademico_usuario', 100)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario', 'KO_tituloacademico_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('tituloacademico_usuario');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('tituloacademico_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario','KO_tituloacademico_usuario_acentos_ñ_espacios_puntuacion');
+            DOM_class.mostrarerrorvalor('tituloacademico_usuario');
+            return false;
+        }
+        DOM_class.exito('tituloacademico_usuario');
+        return true;
+    }
+
+    //Validaciones de TipoContratoU:
+    static comprobar_tipocontrato_usuario() {
+
+        if (ValidacionesAtomicas.size_minimo('tipocontrato_usuario', 1)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario', 'KO_tipocontrato_usuario_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('tipocontrato_usuario', 40)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario', 'KO_tipocontrato_usuario_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('tipocontrato_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario','KO_tipocontrato_usuario_acentos_ñ_espacios_puntuacion');
+            return false;
+        }
+        DOM_class.exito('tipocontrato_usuario');
+        return true;
+    }
+
+    static comprobar_tipocontrato_usuario_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('tipocontrato_usuario')) {
+        } else {
+            DOM_class.mostrarexitovalor('tipocontrato_usuario');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('tipocontrato_usuario', 40)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario', 'KO_tipocontrato_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('tipocontrato_usuario');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('tipocontrato_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario','KO_tipocontrato_usuario_acentos_ñ_espacios_puntuacion');
+            DOM_class.mostrarerrorvalor('tipocontrato_usuario');
+            return false;
+        }
+        DOM_class.exito('tipocontrato_usuario');
+        return true;
+    }
+
+    //Validaciones de CentroU:
+    static comprobar_centro_usuario() {
+
+        if (ValidacionesAtomicas.size_minimo('centro_usuario', 5)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('centro_usuario', 'KO_centro_usuario_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('centro_usuario', 100)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('centro_usuario', 'KO_centro_usuario_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('centro_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('centro_usuario','KO_centro_usuario_acentos_ñ_espacios_puntuacion');
+            return false;
+        }
+        DOM_class.exito('centro_usuario');
+        return true;
+    }
+
+    static comprobar_centro_usuario_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('centro_usuario')) {
+        } else {
+            DOM_class.mostrarexitovalor('centro_usuario');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('centro_usuario', 100)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('centro_usuario', 'KO_centro_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('centro_usuario');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios_puntuacion('centro_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('centro_usuario','KO_centro_usuario_acentos_ñ_espacios_puntuacion');
+            DOM_class.mostrarerrorvalor('centro_usuario');
+            return false;
+        }
+        DOM_class.exito('centro_usuario');
+        return true;
+    }
+
 }
