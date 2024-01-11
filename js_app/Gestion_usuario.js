@@ -805,7 +805,125 @@ static async SEARCH(){
     }
 
     //Validaciones de FotoU:
+    static comprobar_nueva_foto_usuario(){
+        if(validacionesatomicas.size_minimo_extension('nueva_foto_usuario',1)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_tam_min');
+            return false;
+        }
+        if(validacionesatomicas.size_maximo_extension('nueva_foto_usuario',20)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_tam_max');
+            return false;
+        }
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('nueva_foto_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_no_acentos_ñ_espacios_fich');
+            return false;
+        }
+        if(validacionesatomicas.extension_fich('nueva_foto_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_extension_fich');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('nueva_foto_usuario');
+        return true;
+    }
 
+    static comprobar_nueva_foto_usuario_EDIT(){
+        if(!validacionesatomicas.es_vacio('nueva_foto_usuario')){
+            if(validacionesatomicas.size_minimo_extension('nueva_foto_usuario',1)){
+            } else {
+                DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_tam_min');
+                return false;
+            }
+            if(validacionesatomicas.size_maximo_extension('nueva_foto_usuario',20)){
+            } else {
+                DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_tam_max');
+                return false;
+            }
+            if(validacionesatomicas.no_acentos_ñ_espacios_fich('nueva_foto_usuario')){
+            } else {
+                DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_no_acentos_ñ_espacios_fich');
+                return false;
+            }
+            if(validacionesatomicas.extension_fich('nueva_foto_usuario')){
+            } else {
+                DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_extension_fich');
+                return false;
+            }
+        }
+        DOM_class.mostrarexitovalor('nueva_foto_usuario');
+        return true;
+    }
+
+    static comprobar_nueva_foto_usuario_SEARCH(){
+        if(validacionesatomicas.es_vacio('nueva_foto_usuario')){
+            DOM_class.mostrarexitovalor('nueva_foto_usuario');
+            return true;
+        }
+        if(validacionesatomicas.size_maximo_extension('nueva_foto_usuario',20)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('nueva_foto_usuario');
+            return false;
+        }
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('nueva_foto_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_no_acentos_ñ_espacios_fich');
+            DOM_class.mostrarerrorvalor('nueva_foto_usuario');
+            return false;
+        }
+
+        DOM_class.mostrarexitovalor('nueva_foto_usuario');
+        return true;
+    }
+
+    static comprobar_foto_usuario(){
+        if(validacionesatomicas.size_minimo_extension('foto_usuario',1)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('foto_usuario','KO_foto_usuario_tam_min');
+            return false;
+        }
+        if(validacionesatomicas.size_maximo_extension('foto_usuario',20)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('foto_usuario','KO_foto_usuario_tam_max');
+            return false;
+        }
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('foto_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('foto_usuario','KO_foto_usuario_no_acentos_ñ_espacios_fich');
+            return false;
+        }
+        if(validacionesatomicas.extension_fich('foto_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('foto_usuario','KO_foto_usuario_extension_fich');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('foto_usuario');
+        return true;
+    }
+
+    static comprobar_foto_usuario_SEARCH(){
+        if(validacionesatomicas.es_vacio('foto_usuario')){
+            DOM_class.mostrarexitovalor('foto_usuario');
+            return true;
+        }
+        if(validacionesatomicas.size_maximo_extension('foto_usuario',20)){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('foto_usuario','KO_foto_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('foto_usuario');
+            return false;
+        }
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('foto_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('foto_usuario','KO_foto_usuario_no_acentos_ñ_espacios_fich');
+            DOM_class.mostrarerrorvalor('foto_usuario');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('foto_usuario');
+        return true;
+    }
 
     //Validaciones de TipoU:
     static comprobar_tipo_usuario() {
