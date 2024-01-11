@@ -38,9 +38,9 @@ def_test =
     //Tests de FicheropdfC:
     Array(24, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT', 'tamaño menor que 1', 'El fichero PDF del congreso debe tener una longitud mínima de 10 caracteres', 'Fichero PDF del congreso introducido inválido', false),
     Array(25, 'congreso', 'ficheropdf_congreso', 'SEARCH', 'vacío', 'Éxito', 'Fichero PDF del congreso intrducido válido', true),
-    Array(27, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'tamaño mayor que 20', 'El fichero PDF del congreso debe tener una longitud máxima de 100 caracteres', 'Fichero PDF del congreso introducido inválido', false),
-    Array(28, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'extensión distinta a pdf', 'El fichero PDF del congreso debe ser un fichero con la extensión .pdf', 'Fichero PDF del congreso introducido inválido', false),
-    Array(29, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'alfanumérico con acentos, con ñ ,espacios, caracteres especiales y signos de puntuación', 'El fichero PDF del congreso contiene algunos caracteres no permitidos', 'Fichero PDF del congreso introducido inválido', false),
-    Array(30, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'longitud entre 1 y 20, con caracteres y extensión permitidos', 'Éxito', 'Fichero PDF del congreso intrducido válido', true)
+    Array(26, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'tamaño mayor que 20', 'El fichero PDF del congreso debe tener una longitud máxima de 100 caracteres', 'Fichero PDF del congreso introducido inválido', false),
+    Array(27, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'extensión distinta a pdf', 'El fichero PDF del congreso debe ser un fichero con la extensión .pdf', 'Fichero PDF del congreso introducido inválido', false),
+    Array(28, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'caracteres no permitidos', 'El fichero PDF del congreso solo puede contener carateres alfanumérico, sin acentos, . , \/ y \\', 'Fichero PDF del congreso introducido inválido', false),
+    Array(29, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'longitud entre 1 y 20, con caracteres y extensión permitidos', 'Éxito', 'Fichero PDF del congreso intrducido válido', true)
 
 //Usuario---------------------------------------------------------------------------------------------------
