@@ -461,6 +461,132 @@ static async SEARCH(){
     }
 
     //Validaciones de PasswordU:
-    
+    static comprobar_password_usuario() {
+
+        if (ValidacionesAtomicas.size_minimo('password_usuario', 3)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('password_usuario', 'KO_password_usuario_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('password_usuario', 32)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('password_usuario', 'KO_password_usuario_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios_numeros('password_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('password_usuario','KO_password_usuario_acentos_ñ_espacios_numeros');
+            return false;
+        }
+        DOM_class.exito('password_usuario');
+        return true;
+    }
+
+    static comprobar_password_usuario_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('password_usuario')) {
+        } else {
+            DOM_class.mostrarexitovalor('password_usuario');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('password_usuario', 32)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('password_usuario', 'KO_password_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('password_usuario');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios_numeros('password_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('password_usuario','KO_password_usuario_acentos_ñ_espacios_numeros');
+            DOM_class.mostrarerrorvalor('password_usuario');
+            return false;
+        }
+        DOM_class.exito('password_usuario');
+        return true;
+    }
+
+    //Validaciones de NombreU:
+    static comprobar_nombre_usuario() {
+
+        if (ValidacionesAtomicas.size_minimo('nombre_usuario', 2)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nombre_usuario', 'KO_nombre_usuario_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('nombre_usuario', 15)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nombre_usuario', 'KO_nombre_usuario_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios('nombre_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nombre_usuario','KO_nombre_usuario_acentos_ñ_espacios');
+            return false;
+        }
+        DOM_class.exito('nombre_usuario');
+        return true;
+    }
+
+    static comprobar_nombre_usuario_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('nombre_usuario')) {
+        } else {
+            DOM_class.mostrarexitovalor('nombre_usuario');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('nombre_usuario', 15)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nombre_usuario', 'KO_nombre_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('nombre_usuario');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios('nombre_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nombre_usuario','KO_nombre_usuario_acentos_ñ_espacios');
+            DOM_class.mostrarerrorvalor('nombre_usuario');
+            return false;
+        }
+        DOM_class.exito('nombre_usuario');
+        return true;
+    }
+
+    //Validaciones de ApellidosU:
+    static comprobar_apellidos_usuario() {
+
+        if (ValidacionesAtomicas.size_minimo('apellidos_usuario', 3)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario', 'KO_apellidos_usuario_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('apellidos_usuario', 30)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario', 'KO_apellidos_usuario_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios('apellidos_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario','KO_apellidos_usuario_acentos_ñ_espacios');
+            return false;
+        }
+        DOM_class.exito('apellidos_usuario');
+        return true;
+    }
+
+    static comprobar_apellidos_usuario_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('apellidos_usuario')) {
+        } else {
+            DOM_class.mostrarexitovalor('apellidos_usuario');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('apellidos_usuario', 30)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario', 'KO_apellidos_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('apellidos_usuario');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios('apellidos_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario','KO_apellidos_usuario_acentos_ñ_espacios');
+            DOM_class.mostrarerrorvalor('apellidos_usuario');
+            return false;
+        }
+        DOM_class.exito('apellidos_usuario');
+        return true;
+    }
 
 }
