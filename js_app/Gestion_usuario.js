@@ -942,4 +942,85 @@ static async SEARCH(){
         return true;
     }
 
+    static recargarform(){
+
+        document.getElementById("IU_form").innerHTML= '';
+        document.getElementById("IU_form").innerHTML=`
+        
+        <label class="label_login_usuario">Login del usuario: </label>
+        <input type='text' id='login_usuario' name='login_usuario'></input>
+        <div id="div_error_login_usuario" class="errorcampo"><a id="error_login_usuario"></a></div>
+        <br>
+
+        <label class="label_password_usuario">Password del usuario: </label>
+        <input type='text' id='password_usuario' name='password_usuario'></input>
+        <div id="div_error_password_usuario" class="errorcampo"><a id="error_password_usuario"></a></div>
+        <br>
+
+        <label class="label_nombre_usuario">Nombre del usuario: </label>
+        <input type='text' id='nombre_usuario' name='nombre_usuario'></input>
+        <div id="div_error_nombre_usuario" class="errorcampo"><a id="error_nombre_usuario"></a></div>
+        <br>
+
+        <label class="label_apellidos_usuario">Apellidos del usuario: </label>
+        <input type='text' id='apellidos_usuario' name='apellidos_usuario'></input>
+        <div id="div_error_apellidos_usuario" class="errorcampo"><a id="error_apellidos_usuario"></a></div>
+        <br>
+
+        <label class="label_tituloacademico_usuario">Titulo academico del usuario: </label>
+        <input type='text' id='tituloacademico_usuario' name='tituloacademico_usuario'></input>
+        <div id="div_error_tituloacademico_usuario" class="errorcampo"><a id="error_tituloacademico_usuario"></a></div>
+        <br>
+
+        <label class="label_tipocontrato_usuario">Tipo de contrato del usuario: </label>
+        <input type='text' id='tipocontrato_usuario' name='tipocontrato_usuario'></input>
+        <div id="div_error_tipocontrato_usuario" class="errorcampo"><a id="error_tipocontrato_usuario"></a></div>
+        <br>
+
+        <label class="label_centro_usuario">Centro del usuario: </label>
+        <input type='text' id='centro_usuario' name='centro_usuario'></input>
+        <div id="div_error_centro_usuario" class="errorcampo"><a id="error_centro_usuario"></a></div>
+        <br>
+
+        <label class="label_departamento_usuario">Departamento del usuario: </label>
+        <input type='text' id='departamento_usuario' name='departamento_usuario'></input>
+        <div id="div_error_departamento_usuario" class="errorcampo"><a id="error_departamento_usuario"></a></div>
+        <br>
+
+        <label class="label_universidad_usuario">Universidad del usuario: </label>
+        <input type='text' id='universidad_usuario' name='universidad_usuario'></input>
+        <div id="div_error_universidad_usuario" class="errorcampo"><a id="error_universidad_usuario"></a></div>
+        <br>
+    
+        <label id="label_foto_usuario" class="label_foto_usuario">Foto del usuario: </label>
+        <input type='text' id='foto_usuario' name='foto_usuario'></input>
+        <a id="link_foto_usuario" href="http://193.147.87.202/ET2/filesuploaded/files_foto_usuario/"><img src="./iconos/FILE.png" />
+    
+        <div id="div_error_foto_usuario" class="errorcampo"><a id="error_foto_usuario"></a></div>
+            
+        <label id="label_nueva_foto_usuario" class="label_nueva_foto_usuario">Nueva foto del usuario: </label>
+        <input type='file' id='nueva_foto_usuario' name='nueva_foto_usuario'></input>
+        <div id="div_error_nueva_foto_usuario" class="errorcampo"><a id="error_nueva_foto_usuario"></a></div>
+        <br>
+
+        <label class="label_tipo_usuario">Tipo de usuario: </label>
+        <select name="tipo_usuario" id="tipo_usuario">
+            <option value="">Selecciona</option>
+            <option value="A">ALUMNO</option>
+            <option value="P">PROFESOR</option>
+        </select>
+        <div id="div_error_tipo_usuario" class="errorcampo"><a id="error_tipo_usuario"></a></div>
+        <br>
+    
+        `;
+    
+            let campos = document.forms['IU_form'].elements;
+            for (let i = 0; i < campos.length; i++) {
+                if (eval(document.getElementById('div_error_' + campos[i].id))) {
+                    document.getElementById('div_error_' + campos[i].id).style.display = 'none';
+                }
+            }
+            setLang();
+        }
+
 }
