@@ -397,7 +397,7 @@ class Gestion_congreso extends GestionEntidad{
         return true;
     }
 
-    static comprobar_acronimo_congreso_SERACH() {
+    static comprobar_acronimo_congreso_SEARCH() {
 
         if (ValidacionesAtomicas.es_vacio('acronimo_congreso')) {
         } else {
@@ -420,7 +420,47 @@ class Gestion_congreso extends GestionEntidad{
     }
 
     //Validaciones de AnhoC:
+    static comprobar_anho_congreso() {
 
+        if (ValidacionesAtomicas.size_minimo('anho_congreso', 10)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('anho_congreso', 'KO_anho_congreso_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('anho_congreso', 10)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('anho_congreso', 'KO_anho_congreso_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.formato_fecha_correcto('anho_congreso')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('anho_congreso','KO_anho_congreso_formato_fecha_correcto');
+            return false;
+        }
+        DOM_class.exito('anho_congreso');
+        return true;
+    }
+
+    static comprobar_anho_congreso_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('anho_congreso')) {
+        } else {
+            DOM_class.mostrarexitovalor('anho_congreso');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('anho_congreso', 10)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('anho_congreso', 'KO_anho_congreso_tam_max');
+            DOM_class.mostrarerrorvalor('anho_congreso');
+            return false;
+        }
+        if(ValidacionesAtomicas.formato_fecha_correcto('anho_congreso')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('anho_congreso','KO_anho_congreso_formato_fecha_correcto');
+            DOM_class.mostrarerrorvalor('anho_congreso');
+            return false;
+        }
+        DOM_class.exito('anho_congreso');
+        return true;
+    }
 
     //Validaciones de LugarC:
     static comprobar_lugar_congreso() {
