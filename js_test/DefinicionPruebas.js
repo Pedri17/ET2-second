@@ -38,7 +38,7 @@ pruebas_test =
     Array (14, 27, 'congreso', 'anho_congreso', 'ADD/EDIT', '07/06', false),
     Array (14, 28, 'congreso', 'anho_congreso', 'ADD/EDIT', '07/06/2002', true),
     Array (15, 29, 'congreso', 'anho_congreso', 'SEARCH', ' ', true),
-    Array (16, 30, 'congreso', 'anho_congreso', 'ADD/EDIT/SEARCH', '007/006/2002', false),
+    Array (16, 30, 'congreso', 'anho_congreso', 'ADD/EDIT/SEARCH', '0007/0006/2002', false),
     Array (16, 31, 'congreso', 'anho_congreso', 'ADD/EDIT/SEARCH', '07/06/2002', true),
     Array (17, 32, 'congreso', 'anho_congreso', 'ADD/EDIT/SEARCH', '99/99/9999', false),
     Array (17, 33, 'congreso', 'anho_congreso', 'ADD/EDIT/SEARCH', '35/13/3002', false),
