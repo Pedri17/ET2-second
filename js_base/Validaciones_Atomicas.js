@@ -1,4 +1,4 @@
-class validacionesAtomicas{
+class validacionesatomicas{
 
     static es_vacio(id){
         if(document.getElementById(id).value.length !== 0){
@@ -111,11 +111,45 @@ class validacionesAtomicas{
     }
 
     static formato_fecha_correcto(id){
-
+        const caracteres = /^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/\d{4}$/;
+        const valido = caracteres.test(document.getElementById(idElemento).value);
+        if(!valido){
+            return false; 
+        } else {
+            return true;
+        }
     }
 
-    static extension_fich(id){
-        
+    static extension_fich_pdf(id){
+        var content = document.getElementById(id).value;
+        var extension;
+
+        if(content != null){
+            if(content.includes("\\")){
+                extension = content.split("\\")[2];
+            }
+            if(extension.includes(".")){
+                extension = nombre.split(".")[1];
+            }
+        }
+
+        return (extension == "pdf");
+    }
+
+    static extension_fich_jpg_jpeg(id){
+        var content = document.getElementById(id).value;
+        var extension;
+
+        if(content != null){
+            if(content.includes("\\")){
+                extension = content.split("\\")[2];
+            }
+            if(extension.includes(".")){
+                extension = nombre.split(".")[1];
+            }
+        }
+
+        return (extension == "jpg" || extension == "jpeg");
     }
 
     static size_adecuado(id, peso){

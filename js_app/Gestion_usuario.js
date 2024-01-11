@@ -821,9 +821,9 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_no_acentos_ñ_espacios_fich');
             return false;
         }
-        if(validacionesatomicas.extension_fich('nueva_foto_usuario')){
+        if(validacionesatomicas.extension_fich_jpg_jpeg('nueva_foto_usuario')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_extension_fich');
+            DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_extension_fich_jpg_jpeg');
             return false;
         }
         DOM_class.mostrarexitovalor('nueva_foto_usuario');
@@ -847,9 +847,9 @@ static async SEARCH(){
                 DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_no_acentos_ñ_espacios_fich');
                 return false;
             }
-            if(validacionesatomicas.extension_fich('nueva_foto_usuario')){
+            if(validacionesatomicas.extension_fich_jpg_jpeg('nueva_foto_usuario')){
             } else {
-                DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_extension_fich');
+                DOM_class.mostrardivmensajeserrordebajo('nueva_foto_usuario','KO_nueva_foto_usuario_extension_fich_jpg_jpeg');
                 return false;
             }
         }
@@ -895,9 +895,9 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('foto_usuario','KO_foto_usuario_no_acentos_ñ_espacios_fich');
             return false;
         }
-        if(validacionesatomicas.extension_fich('foto_usuario')){
+        if(validacionesatomicas.extension_fich_jpg_jpeg('foto_usuario')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('foto_usuario','KO_foto_usuario_extension_fich');
+            DOM_class.mostrardivmensajeserrordebajo('foto_usuario','KO_foto_usuario_extension_fich_jpg_jpeg');
             return false;
         }
         DOM_class.mostrarexitovalor('foto_usuario');
