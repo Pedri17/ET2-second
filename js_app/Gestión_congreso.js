@@ -40,7 +40,7 @@ class Gestion_congreso extends GestionEntidad{
     }
 
     //Ver tema de atributos pasados
-    static async createForm_EDIT(codigo_congreso, nombre_congreso, acronimo_congreso, anho_congreso, lugar_congreso, ficheropdf_congreso){
+    static async createForm_EDIT(datostupla){
         this.recargarform();
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_EDIT_programa";
         document.getElementById('IU_form').action = 'javascript:Gestion_programa.EDIT();';
@@ -51,18 +51,18 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById('codigo_congreso').setAttribute("readonly","");
 
         document.getElementById('nombre_congreso').setAttribute('onblur', 'Gestion_programa.comprobar_nombre_congreso()');
-        document.getElementById('nombre_congreso').value = nombre_congreso;
+        document.getElementById('nombre_congreso').value = datostupla.nombre_congreso;
 
         document.getElementById('acronimo_congreso').setAttribute('onblur', 'Gestion_programa.comprobar_acronimo_congreso()');
-        document.getElementById('acronimo_congreso').value = acronimo_congreso;
+        document.getElementById('acronimo_congreso').value = datostupla.acronimo_congreso;
 
         document.getElementById('anho_congreso').setAttribute('onblur', 'Gestion_programa.comprobar_anho_congreso()');
-        document.getElementById('anho_congreso').value = anho_congreso;
+        document.getElementById('anho_congreso').value = datostupla.anho_congreso;
 
         document.getElementById('lugar_congreso').setAttribute('onblur', 'Gestion_programa.comprobar_lugar_congreso()');
-        document.getElementById('lugar_congreso').value = lugar_congreso;
+        document.getElementById('lugar_congreso').value = datostupla.lugar_congreso;
 
-        document.getElementById('ficheropdf_congreso').value = ficheropdf_congreso;
+        document.getElementById('ficheropdf_congreso').value = datostupla.ficheropdf_congreso;
         document.getElementById('link_ficheropdf_congreso').setAttribute('href','http://193.147.87.202/ET2/filesuploaded/files_ficheropdf_congreso/'+ficheropdf_congreso.value);
         document.getElementById('ficheropdf_congreso').setAttribute("readonly",true);
 
@@ -81,30 +81,30 @@ class Gestion_congreso extends GestionEntidad{
 
     }
 
-    static async createForm_DELETE(codigo_congreso, nombre_congreso, acronimo_congreso, anho_congreso, lugar_congreso, ficheropdf_congreso){
+    static async createForm_DELETE(datostupla){
         this.recargarform();
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_DELETE_programa";
         document.getElementById('IU_form').action = 'javascript:Gestion_programa.DELETE();';
 
-        document.getElementById('codigo_congreso').value = codigo_congreso;
+        document.getElementById('codigo_congreso').value = datostupla.codigo_congreso;
         document.getElementById('codigo_congreso').setAttribute('readonly',true);
 
-        document.getElementById('nombre_congreso').value = nombre_congreso;
+        document.getElementById('nombre_congreso').value = datostupla.nombre_congreso;
         document.getElementById('nombre_congreso').setAttribute('readonly',true);
 
-        document.getElementById('acronimo_congreso').value = acronimo_congreso;
+        document.getElementById('acronimo_congreso').value = datostupla.acronimo_congreso;
         document.getElementById('acronimo_congreso').setAttribute('readonly',true);
 
-        document.getElementById('anho_congreso').value = anho_congreso;
+        document.getElementById('anho_congreso').value = datostupla.anho_congreso;
         document.getElementById('anho_congreso').setAttribute('readonly',true);
 
-        document.getElementById('lugar_congreso').value = lugar_congreso;
+        document.getElementById('lugar_congreso').value = datostupla.lugar_congreso;
         document.getElementById('lugar_congreso').setAttribute('readonly',true);
 
-        document.getElementById('ficheropdf_congreso').value = ficheropdf_congreso;
+        document.getElementById('ficheropdf_congreso').value = datostupla.ficheropdf_congreso;
         document.getElementById('ficheropdf_congreso').setAttribute('readonly',true);
         document.getElementById('ficheropdf_congreso').setAttribute("readonly", true);
-        document.getElementById("link_ficheropdf_congreso").href += ficheropdf_congreso;
+        document.getElementById("link_ficheropdf_congreso").href += datostupla.ficheropdf_congreso;
 
         document.getElementById("label_nuevo_ficheropdf_congreso").style.display = 'none';
         document.getElementById("nuevo_ficheropdf_congreso").style.display = 'none';
@@ -123,8 +123,8 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById('div_IU_form').style.display = 'block';
     }
 
-    static async createForm_SHOWCURRENT(codigo_congreso, nombre_congreso, acronimo_congreso, anho_congreso, lugar_congreso, ficheropdf_congreso){
-        this.createForm_DELETE(codigo_congreso, nombre_congreso, acronimo_congreso, anho_congreso, lugar_congreso, ficheropdf_congreso);
+    static async createForm_SHOWCURRENT(datostupla){
+        this.createForm_DELETE(datostupla);
 
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_SHOWCURRENT_programa";
         document.getElementById('botondelete').remove();

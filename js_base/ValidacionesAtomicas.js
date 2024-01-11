@@ -25,11 +25,11 @@ class validacionesAtomicas{
     }
 
     static size_minimo_extension(id, minimo){
- 
+        
     }
 
     static size_maximo_extension(id, maximo){
-
+        
     }
 
     static solo_numeros(id){
