@@ -417,4 +417,50 @@ static async SEARCH(){
 
 //Validaciones----------------------------------------------------------------------
 
+    //Validaciones de LoginU:
+    static comprobar_login_usuario() {
+
+        if (ValidacionesAtomicas.size_minimo('login_usuario', 4)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('login_usuario', 'KO_login_usuario_tam_min');
+            return false;
+        } if (ValidacionesAtomicas.size_maximo('login_usuario', 15)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('login_usuario', 'KO_login_usuario_tam_max');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios_numeros('login_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('login_usuario','KO_login_usuario_acentos_ñ_espacios_numeros');
+            return false;
+        }
+        DOM_class.exito('login_usuario');
+        return true;
+    }
+
+    static comprobar_login_usuario_SEARCH() {
+
+        if (ValidacionesAtomicas.es_vacio('login_usuario')) {
+        } else {
+            DOM_class.mostrarexitovalor('login_usuario');
+            return true;
+        } if (ValidacionesAtomicas.size_maximo('login_usuario', 15)) {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('login_usuario', 'KO_login_usuario_tam_max');
+            DOM_class.mostrarerrorvalor('login_usuario');
+            return false;
+        }
+        if(ValidacionesAtomicas.acentos_ñ_espacios_numeros('login_usuario')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('login_usuario','KO_login_usuario_acentos_ñ_espacios_numeros');
+            DOM_class.mostrarerrorvalor('login_usuario');
+            return false;
+        }
+        DOM_class.exito('login_usuario');
+        return true;
+    }
+
+    //Validaciones de PasswordU:
+    
+
 }

@@ -94,6 +94,14 @@ class validacionesAtomicas{
         }
     }
 
+    static acentos_ñ_espacios_numeros(id){
+        if (/^[0-9A-Za-zÁ-Úá-úñÑ\s]+$/.test(document.getElementById(id)) == true){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     static formato_fecha_correcto(id){
 
     }
