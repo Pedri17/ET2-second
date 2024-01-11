@@ -804,4 +804,24 @@ static async SEARCH(){
         return true;
     }
 
+    //Validaciones de FotoU:
+
+
+    //Validaciones de TipoU:
+    static comprobar_tipo_usuario() {
+
+        if (valor === 'A' || valor === 'P') {
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('tipo_usuario', 'KO_tipo_usuario_formato');
+            return false;
+        }
+        DOM_class.exito('tipo_usuario');
+        return true;
+    }
+
+    static comprobar_tipo_usuario_SEARCH() {
+        DOM_class.exito('tipo_usuario');
+        return true;
+    }
+
 }
