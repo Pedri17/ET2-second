@@ -10,31 +10,31 @@ class Gestion_usuario extends GestionEntidad{
         document.getElementById('IU_form').action = 'javascript:Gestion_congreso.ADD();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_congreso.comprobar_submit();');
 
-        document.getElementById('LoginU').setAttribute('onblur', 'Gestion_congreso.comprobar_loginu()');
+        document.getElementById('login_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_login_usuario()');
 
-        document.getElementById('PasswordU').setAttribute('onblur', 'Gestion_congreso.comprobar_passwordU()');
+        document.getElementById('password_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_password_usuario()');
         
-        document.getElementById('NombreU').setAttribute('onblur', 'Gestion_congreso.comprobar_nombreu()');
+        document.getElementById('nombre_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_nombre_usuario()');
         
-        document.getElementById('ApellidosU').setAttribute('onblur', 'Gestion_congreso.comprobar_apellidosu()');
+        document.getElementById('apellidos_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_apellidos_usuario()');
         
-        document.getElementById('TituloAcademicoU').setAttribute('onblur', 'Gestion_congreso.comprobar_tituloacademicou()');
+        document.getElementById('tituloacademico_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_tituloacademico_usuario()');
 
-        document.getElementById('TipoContratoU').setAttribute('onblur', 'Gestion_congreso.comprobar_tipocontratou()');
+        document.getElementById('tipocontrato_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_tipocontrato_usuario()');
         
-        document.getElementById('CentroU').setAttribute('onblur', 'Gestion_congreso.comprobar_centrou()');
+        document.getElementById('centro_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_centro_usuario()');
 
-        document.getElementById('DepartamentoU').setAttribute('onblur', 'Gestion_congreso.comprobar_departamentou()');
+        document.getElementById('departamento_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_departamento_usuario()');
 
-        document.getElementById('UniversidadU').setAttribute('onblur', 'Gestion_congreso.comprobar_universidadu()');
+        document.getElementById('universidad_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_universidad_usuario()');
 
-        document.getElementById('nueva_FotoU').setAttribute('onblur','Gestion_programa.comprobar_nueva_fotou()');
+        document.getElementById('nueva_foto_usuario').setAttribute('onblur','Gestion_programa.comprobar_nueva_foto_usuario()');
         
-        document.getElementById("label_FotoU").style.display = 'none';
-        document.getElementById("FotoU").style.display = 'none';
-        document.getElementById("link_FotoU").style.display = 'none';
+        document.getElementById("label_foto_usuario").style.display = 'none';
+        document.getElementById("foto_usuario").style.display = 'none';
+        document.getElementById("link_foto_usuario").style.display = 'none';
 
-        document.getElementById('TipoU').setAttribute('onblur', 'Gestion_congreso.comprobar_tipou()');
+        document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_congreso.comprobar_tipo_usuario()');
 
         await this.peticionBackGeneral('', 'area', 'SEARCH')
         .then((respuesta) => {
@@ -61,48 +61,48 @@ class Gestion_usuario extends GestionEntidad{
 
     }
 
-    static async createForm_EDIT(LoginU, PasswordU, NombreU, ApellidosU, TituloAcademicoU, TipoContratoU, CentroU, DepartamentoU, UniversidadU, FotoU, TipoU){
+    static async createForm_EDIT(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario){
         this.recargarform();
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_EDIT_programa";
         document.getElementById('IU_form').action = 'javascript:Gestion_programa.EDIT();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_programa.comprobar_submit_EDIT();');
 
-        document.getElementById('LoginU').setAttribute('onblur', 'Gestion_programa.comprobar_loginu()');
-        document.getElementById('LoginU').value = LoginU;
-        document.getElementById('LoginU').setAttribute("readonly","");
+        document.getElementById('login_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_login_usuario()');
+        document.getElementById('login_usuario').value = login_usuario;
+        document.getElementById('login_usuario').setAttribute("readonly","");
 
-        document.getElementById('PasswordU').setAttribute('onblur', 'Gestion_programa.comprobar_passwordu()');
-        document.getElementById('PasswordU').value = PasswordU;
+        document.getElementById('password_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_password_usuario()');
+        document.getElementById('password_usuario').value = password_usuario;
 
-        document.getElementById('NombreU').setAttribute('onblur', 'Gestion_programa.comprobar_nombreu()');
-        document.getElementById('NombreU').value = NombreU;
+        document.getElementById('nombre_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_nombre_usuario()');
+        document.getElementById('nombre_usuario').value = nombre_usuario;
 
-        document.getElementById('ApellidosU').setAttribute('onblur', 'Gestion_programa.comprobar_apellidosu()');
-        document.getElementById('ApellidosU').value = ApellidosU;
+        document.getElementById('apellidos_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_apellidos_usuario()');
+        document.getElementById('apellidos_usuario').value = apellidos_usuario;
 
-        document.getElementById('TituloAcademicoU').setAttribute('onblur', 'Gestion_programa.comprobar_tituloacademicou()');
-        document.getElementById('TituloAcademicoU').value = TituloAcademicoU;
+        document.getElementById('tituloacademico_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tituloacademico_usuario()');
+        document.getElementById('tituloacademico_usuario').value = tituloacademico_usuario;
 
-        document.getElementById('TipoContratoU').setAttribute('onblur', 'Gestion_programa.comprobar_tipocontratou()');
-        document.getElementById('TipoContratoU').value = TipoContratoU;
+        document.getElementById('tipocontrato_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tipocontrato_usuario()');
+        document.getElementById('tipocontrato_usuario').value = tipocontrato_usuario;
 
-        document.getElementById('CentroU').setAttribute('onblur', 'Gestion_programa.comprobar_centrou()');
-        document.getElementById('CentroU').value = CentroU;
+        document.getElementById('centro_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_centro_usuario()');
+        document.getElementById('centro_usuario').value = centro_usuario;
 
-        document.getElementById('DepartamentoU').setAttribute('onblur', 'Gestion_programa.comprobar_departamentou()');
-        document.getElementById('DepartamentoU').value = DepartamentoU;
+        document.getElementById('departamento_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_departamento_usuario()');
+        document.getElementById('departamento_usuario').value = departamento_usuario;
 
-        document.getElementById('UniversidadU').setAttribute('onblur', 'Gestion_programa.comprobar_universidadu()');
-        document.getElementById('UniversidadU').value = UniversidadU;
+        document.getElementById('universidad_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_universidad_usuario()');
+        document.getElementById('universidad_usuario').value = universidad_usuario;
 
-        document.getElementById('FotoU').value = FotoU;
-        document.getElementById('link_FotoU').setAttribute('href','http://193.147.87.202/ET2/filesuploaded/files_fotou/'+FotoU.value);
-        document.getElementById('FotoU').setAttribute("readonly",true);
+        document.getElementById('foto_usuario').value = foto_usuario;
+        document.getElementById('link_foto_usuario').setAttribute('href','http://193.147.87.202/ET2/filesuploaded/files_foto_usuario/'+foto_usuario.value);
+        document.getElementById('foto_usuario').setAttribute("readonly",true);
 
-        document.getElementById('nueva_FotoU').setAttribute('onblur','Gestion_programa.comprobar_nueva_fotou()');
+        document.getElementById('nueva_foto_usuario').setAttribute('onblur','Gestion_programa.comprobar_nueva_foto_usuario()');
 
-        document.getElementById('TipoU').setAttribute('onblur', 'Gestion_programa.comprobar_tipou()');
-        document.getElementById('TipoU').value = TipoU;
+        document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tipo_usuario()');
+        document.getElementById('tipo_usuario').value = tipo_usuario;
 
         await this.peticionBackGeneral('', 'area', 'SEARCH')
         .then((respuesta) => {
@@ -129,48 +129,48 @@ class Gestion_usuario extends GestionEntidad{
 
     }
 
-    static async createForm_DELETE(LoginU, PasswordU, NombreU, ApellidosU, TituloAcademicoU, TipoContratoU, CentroU, DepartamentoU, UniversidadU, FotoU, TipoU){
+    static async createForm_DELETE(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario){
         this.recargarform();
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_DELETE_programa";
         document.getElementById('IU_form').action = 'javascript:Gestion_programa.DELETE();';
 
-        document.getElementById('LoginU').value = LoginU;
-        document.getElementById('LoginU').setAttribute('readonly',true);
+        document.getElementById('login_usuario').value = login_usuario;
+        document.getElementById('login_usuario').setAttribute('readonly',true);
 
-        document.getElementById('PasswordU').value = PasswordU;
-        document.getElementById('PasswordU').setAttribute('readonly',true);
+        document.getElementById('password_usuario').value = password_usuario;
+        document.getElementById('password_usuario').setAttribute('readonly',true);
 
-        document.getElementById('NombreU').value = NombreU;
-        document.getElementById('NombreU').setAttribute('readonly',true);
+        document.getElementById('nombre_usuario').value = nombre_usuario;
+        document.getElementById('nombre_usuario').setAttribute('readonly',true);
 
-        document.getElementById('ApellidosU').value = ApellidosU;
-        document.getElementById('ApellidosU').setAttribute('readonly',true);
+        document.getElementById('apellidos_usuario').value = apellidos_usuario;
+        document.getElementById('apellidos_usuario').setAttribute('readonly',true);
 
-        document.getElementById('TituloAcademicoU').value = TituloAcademicoU;
-        document.getElementById('TituloAcademicoU').setAttribute('readonly',true);
+        document.getElementById('tituloacademico_usuario').value = tituloacademico_usuario;
+        document.getElementById('tituloacademico_usuario').setAttribute('readonly',true);
 
-        document.getElementById('TipoContratoU').value = TipoContratoU;
-        document.getElementById('TipoContratoU').setAttribute('readonly',true);
+        document.getElementById('tipocontrato_usuario').value = tipocontrato_usuario;
+        document.getElementById('tipocontrato_usuario').setAttribute('readonly',true);
 
-        document.getElementById('CentroU').value = CentroU;
-        document.getElementById('CentroU').setAttribute('readonly',true);
+        document.getElementById('centro_usuario').value = centro_usuario;
+        document.getElementById('centro_usuario').setAttribute('readonly',true);
 
-        document.getElementById('DepartamentoU').value = DepartamentoU;
-        document.getElementById('DepartamentoU').setAttribute('readonly',true);
+        document.getElementById('departamento_usuario').value = departamento_usuario;
+        document.getElementById('departamento_usuario').setAttribute('readonly',true);
 
-        document.getElementById('UniversidadU').value = UniversidadU;
-        document.getElementById('UniversidadU').setAttribute('readonly',true);
+        document.getElementById('universidad_usuario').value = universidad_usuario;
+        document.getElementById('universidad_usuario').setAttribute('readonly',true);
 
-        document.getElementById('FotoU').value = FotoU;
-        document.getElementById('FotoU').setAttribute('readonly',true);
-        document.getElementById('FotoU').setAttribute("readonly", true);
-        document.getElementById("link_FotoU").href += FotoU;
+        document.getElementById('foto_usuario').value = foto_usuario;
+        document.getElementById('foto_usuario').setAttribute('readonly',true);
+        document.getElementById('foto_usuario').setAttribute("readonly", true);
+        document.getElementById("link_foto_usuario").href += foto_usuario;
 
-        document.getElementById("label_nueva_FotoU").style.display = 'none';
-        document.getElementById("nueva_FotoU").style.display = 'none';
+        document.getElementById("label_nueva_foto_usuario").style.display = 'none';
+        document.getElementById("nueva_foto_usuario").style.display = 'none';
 
-        document.getElementById('TipoU').value = TipoU;
-        document.getElementById('TipoU').setAttribute('readonly',true);
+        document.getElementById('tipo_usuario').value = tipo_usuario;
+        document.getElementById('tipo_usuario').setAttribute('readonly',true);
 
         await this.peticionBackGeneral('', 'area', 'SEARCH')
         .then((respuesta) => {
@@ -198,8 +198,8 @@ class Gestion_usuario extends GestionEntidad{
         document.getElementById('div_IU_form').style.display = 'block';
     }
 
-    static async createForm_SHOWCURRENT(LoginU, PasswordU, NombreU, ApellidosU, TituloAcademicoU, TipoContratoU, CentroU, DepartamentoU, UniversidadU, FotoU, TipoU){
-        this.createForm_DELETE(LoginU, PasswordU, NombreU, ApellidosU, TituloAcademicoU, TipoContratoU, CentroU, DepartamentoU, UniversidadU, FotoU, TipoU);
+    static async createForm_SHOWCURRENT(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario){
+        this.createForm_DELETE(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario);
 
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_SHOWCURRENT_programa";
         document.getElementById('botondelete').remove();
@@ -219,29 +219,29 @@ class Gestion_usuario extends GestionEntidad{
         document.getElementById('IU_form').action = 'javascript:Gestion_programa.SEARCH();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_programa.comprobar_submit_SEARCH();');
 
-        document.getElementById('LoginU').setAttribute('onblur', 'Gestion_programa.comprobar_loginu_SEARCH()');
+        document.getElementById('login_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_login_usuario_SEARCH()');
         
-        document.getElementById('PasswordU').setAttribute('onblur', 'Gestion_programa.comprobar_passwordu_SEARCH()');
+        document.getElementById('password_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_password_usuario_SEARCH()');
         
-        document.getElementById('NombreU').setAttribute('onblur', 'Gestion_programa.comprobar_nombreu_SEARCH()');
+        document.getElementById('nombre_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_nombre_usuario_SEARCH()');
         
-        document.getElementById('ApellidosU').setAttribute('onblur', 'Gestion_programa.comprobar_apellidosu_SEARCH()');
+        document.getElementById('apellidos_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_apellidos_usuario_SEARCH()');
         
-        document.getElementById('TituloAcademicoU').setAttribute('onblur', 'Gestion_programa.comprobar_tituloacademicou_SEARCH()');
+        document.getElementById('tituloacademico_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tituloacademico_usuario_SEARCH()');
 
-        document.getElementById('TipoContratoU').setAttribute('onblur', 'Gestion_programa.comprobar_tipocontratou_SEARCH()');
+        document.getElementById('tipocontrato_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tipocontrato_usuario_SEARCH()');
         
-        document.getElementById('Centrou').setAttribute('onblur', 'Gestion_programa.comprobar_centrou_SEARCH()');
+        document.getElementById('centro_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_centro_usuario_SEARCH()');
         
-        document.getElementById('DepartamentoU').setAttribute('onblur', 'Gestion_programa.comprobar_departamentou_SEARCH()');
+        document.getElementById('departamento_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_departamento_usuario_SEARCH()');
         
-        document.getElementById('UniversidadU').setAttribute('onblur', 'Gestion_programa.comprobar_universidadu_SEARCH()');
+        document.getElementById('universidad_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_universidad_usuario_SEARCH()');
 
-        document.getElementById("label_nueva_FotoU").style.display = 'none';
-        document.getElementById("nueva_FotoU").style.display = 'none';
-        document.getElementById("link_FotoU").style.display = 'none';
+        document.getElementById("label_nueva_foto_usuario").style.display = 'none';
+        document.getElementById("nueva_foto_usuario").style.display = 'none';
+        document.getElementById("link_foto_usuario").style.display = 'none';
 
-        document.getElementById('TipoU').setAttribute('onblur', 'Gestion_programa.comprobar_tipou_SEARCH()');
+        document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_programa.comprobar_tipo_usuario_SEARCH()');
 
         await this.peticionBackGeneral('', 'area', 'SEARCH')
         .then((respuesta) => {
@@ -272,17 +272,17 @@ class Gestion_usuario extends GestionEntidad{
 
     static comprobar_submit(){
 
-        let valor1 = this.comprobar_loginu();
-        let valor2 = this.comprobar_passwordu();
-        let valor3 = this.comprobar_nombreu();
-        let valor4 = this.comprobar_apellidosu();
-        let valor5 = this.comprobar_tituloacademicou();
-        let valor6 = this.comprobar_tipocontratou();
-        let valor7 = this.comprobar_centrou();
-        let valor8 = this.comprobar_departamentou();
-        let valor9 = this.comprobar_universidadu();
-        let valor10 = this.comprobar_nueva_fotou();
-        let valor11= this.comprobar_tipou();
+        let valor1 = this.comprobar_login_usuario();
+        let valor2 = this.comprobar_password_usuario();
+        let valor3 = this.comprobar_nombre_usuario();
+        let valor4 = this.comprobar_apellidos_usuario();
+        let valor5 = this.comprobar_tituloacademico_usuario();
+        let valor6 = this.comprobar_tipocontrato_usuario();
+        let valor7 = this.comprobar_centro_usuario();
+        let valor8 = this.comprobar_departamento_usuario();
+        let valor9 = this.comprobar_universidad_usuario();
+        let valor10 = this.comprobar_nueva_foto_usuario();
+        let valor11= this.comprobar_tipo_usuario();
 
         let resultado = (
             valor1 &&
@@ -303,17 +303,17 @@ class Gestion_usuario extends GestionEntidad{
 
     static comprobar_submit_EDIT(){
 
-        let valor1 = this.comprobar_loginu();
-        let valor2 = this.comprobar_passwordu();
-        let valor3 = this.comprobar_nombreu();
-        let valor4 = this.comprobar_apellidosu();
-        let valor5 = this.comprobar_tituloacademicou();
-        let valor6 = this.comprobar_tipocontratou();
-        let valor7 = this.comprobar_centrou();
-        let valor8 = this.comprobar_departamentou();
-        let valor9 = this.comprobar_universidadu();
-        let valor10 = this.comprobar_nueva_fotou_EDIT();
-        let valor11= this.comprobar_tipou();
+        let valor1 = this.comprobar_login_usuario();
+        let valor2 = this.comprobar_password_usuario();
+        let valor3 = this.comprobar_nombre_usuario();
+        let valor4 = this.comprobar_apellidos_usuario();
+        let valor5 = this.comprobar_tituloacademico_usuario();
+        let valor6 = this.comprobar_tipocontrato_usuario();
+        let valor7 = this.comprobar_centro_usuario();
+        let valor8 = this.comprobar_departamento_usuario();
+        let valor9 = this.comprobar_universidad_usuario();
+        let valor10 = this.comprobar_nueva_foto_usuario_EDIT();
+        let valor11= this.comprobar_tipo_usuario();
 
         let resultado = (
             valor1 &&
@@ -334,17 +334,17 @@ class Gestion_usuario extends GestionEntidad{
 
     static comprobar_submit_SEARCH(){
 
-        let valor1 = this.comprobar_loginu_SEARCH();
-        let valor2 = this.comprobar_passwordu_SEARCH();
-        let valor3 = this.comprobar_nombreu_SEARCH();
-        let valor4 = this.comprobar_apellidosu_SEARCH();
-        let valor5 = this.comprobar_tituloacademicou_SEARCH();
-        let valor6 = this.comprobar_tipocontratou_SEARCH();
-        let valor7 = this.comprobar_centrou_SEARCH();
-        let valor8 = this.comprobar_departamentou_SEARCH();
-        let valor9 = this.comprobar_universidadu_SEARCH();
-        let valor10 = this.comprobar_fotou_SEARCH();
-        let valor11= this.comprobar_tipou_SEARCH();
+        let valor1 = this.comprobar_login_usuario_SEARCH();
+        let valor2 = this.comprobar_password_usuario_SEARCH();
+        let valor3 = this.comprobar_nombre_usuario_SEARCH();
+        let valor4 = this.comprobar_apellidos_usuario_SEARCH();
+        let valor5 = this.comprobar_tituloacademico_usuario_SEARCH();
+        let valor6 = this.comprobar_tipocontrato_usuario_SEARCH();
+        let valor7 = this.comprobar_centro_usuario_SEARCH();
+        let valor8 = this.comprobar_departamento_usuario_SEARCH();
+        let valor9 = this.comprobar_universidad_usuario_SEARCH();
+        let valor10 = this.comprobar_foto_usuario_SEARCH();
+        let valor11= this.comprobar_tipo_usuario_SEARCH();
 
         let resultado = (
             valor1 &&
