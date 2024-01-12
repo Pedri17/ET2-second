@@ -1,8 +1,4 @@
 class Gestion_congreso extends GestionEntidad{
-    static resetearformcongreso() {
-        GestionEntidad.resetearForm();
-    }
-
 //Formularios------------------------------------------------------------------------------------
     static async createForm_ADD(){
         this.recargarform();
@@ -10,21 +6,21 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById('IU_form').action = 'javascript:Gestion_congreso.ADD();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_congreso.comprobar_submit();');
 
-        document.getElementById('codigo_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_codigo_congreso()');
+        document.getElementById('CodigoC').setAttribute('onblur', 'Gestion_congreso.comprobar_CodigoC()');
 
-        document.getElementById('nombre_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_nombre_congreso()');
+        document.getElementById('NombreC').setAttribute('onblur', 'Gestion_congreso.comprobar_NombreC()');
         
-        document.getElementById('acronimo_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_acronimo_congreso()');
+        document.getElementById('AcronimoC').setAttribute('onblur', 'Gestion_congreso.comprobar_AcronimoC()');
         
-        document.getElementById('anho_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_anho_congreso()');
+        document.getElementById('AnhoC').setAttribute('onblur', 'Gestion_congreso.comprobar_AnhoC()');
         
-        document.getElementById('lugar_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_lugar_congreso()');
+        document.getElementById('LugarC').setAttribute('onblur', 'Gestion_congreso.comprobar_LugarC()');
 
-        document.getElementById('nuevo_ficheropdf_congreso').setAttribute('onblur','Gestion_congreso.comprobar_nuevo_ficheropdf_congreso()');
+        document.getElementById('nuevo_FicheropdfC').setAttribute('onblur','Gestion_congreso.comprobar_nuevo_FicheropdfC()');
         
-        document.getElementById("label_ficheropdf_congreso").style.display = 'none';
-        document.getElementById("ficheropdf_congreso").style.display = 'none';
-        document.getElementById("link_ficheropdf_congreso").style.display = 'none';
+        document.getElementById("label_FicheropdfC").style.display = 'none';
+        document.getElementById("FicheropdfC").style.display = 'none';
+        document.getElementById("link_FicheropdfC").style.display = 'none';
 
         let botonadd = document.createElement('button');
         botonadd.type = 'submit';
@@ -46,27 +42,27 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById('IU_form').action = 'javascript:Gestion_congreso.EDIT();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_congreso.comprobar_submit_EDIT();');
 
-        document.getElementById('codigo_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_codigo_congreso()');
-        document.getElementById('codigo_congreso').value = datostupla.codigo_congreso;
-        document.getElementById('codigo_congreso').setAttribute("readonly","");
+        document.getElementById('CodigoC').setAttribute('onblur', 'Gestion_congreso.comprobar_CodigoC()');
+        document.getElementById('CodigoC').value = datostupla.CodigoC;
+        document.getElementById('CodigoC').setAttribute("readonly","");
 
-        document.getElementById('nombre_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_nombre_congreso()');
-        document.getElementById('nombre_congreso').value = datostupla.nombre_congreso;
+        document.getElementById('NombreC').setAttribute('onblur', 'Gestion_congreso.comprobar_NombreC()');
+        document.getElementById('NombreC').value = datostupla.NombreC;
 
-        document.getElementById('acronimo_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_acronimo_congreso()');
-        document.getElementById('acronimo_congreso').value = datostupla.acronimo_congreso;
+        document.getElementById('AcronimoC').setAttribute('onblur', 'Gestion_congreso.comprobar_AcronimoC()');
+        document.getElementById('AcronimoC').value = datostupla.AcronimoC;
 
-        document.getElementById('anho_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_anho_congreso()');
-        document.getElementById('anho_congreso').value = datostupla.anho_congreso;
+        document.getElementById('AnhoC').setAttribute('onblur', 'Gestion_congreso.comprobar_AnhoC()');
+        document.getElementById('AnhoC').value = datostupla.AnhoC;
 
-        document.getElementById('lugar_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_lugar_congreso()');
-        document.getElementById('lugar_congreso').value = datostupla.lugar_congreso;
+        document.getElementById('LugarC').setAttribute('onblur', 'Gestion_congreso.comprobar_LugarC()');
+        document.getElementById('LugarC').value = datostupla.LugarC;
 
-        document.getElementById('ficheropdf_congreso').value = datostupla.ficheropdf_congreso;
-        document.getElementById('link_ficheropdf_congreso').setAttribute('href','http://193.147.87.202/ET2/filesuploaded/files_ficheropdf_congreso/'+ficheropdf_congreso.value);
-        document.getElementById('ficheropdf_congreso').setAttribute("readonly",true);
+        document.getElementById('FicheropdfC').value = datostupla.FicheropdfC;
+        document.getElementById('link_FicheropdfC').setAttribute('href','http://193.147.87.202/ET2/filesuploaded/files_FicheropdfC/'+FicheropdfC.value);
+        document.getElementById('FicheropdfC').setAttribute("readonly",true);
 
-        document.getElementById('nuevo_ficheropdf_congreso').setAttribute('onblur','Gestion_congreso.comprobar_nuevo_ficheropdf_congreso()');
+        document.getElementById('nuevo_FicheropdfC').setAttribute('onblur','Gestion_congreso.comprobar_nuevo_FicheropdfC()');
 
         let botonadd = document.createElement('button');
         botonadd.type = 'submit';
@@ -86,28 +82,28 @@ class Gestion_congreso extends GestionEntidad{
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_DELETE_congreso";
         document.getElementById('IU_form').action = 'javascript:Gestion_congreso.DELETE();';
 
-        document.getElementById('codigo_congreso').value = datostupla.codigo_congreso;
-        document.getElementById('codigo_congreso').setAttribute('readonly',true);
+        document.getElementById('CodigoC').value = datostupla.CodigoC;
+        document.getElementById('CodigoC').setAttribute('readonly',true);
 
-        document.getElementById('nombre_congreso').value = datostupla.nombre_congreso;
-        document.getElementById('nombre_congreso').setAttribute('readonly',true);
+        document.getElementById('NombreC').value = datostupla.NombreC;
+        document.getElementById('NombreC').setAttribute('readonly',true);
 
-        document.getElementById('acronimo_congreso').value = datostupla.acronimo_congreso;
-        document.getElementById('acronimo_congreso').setAttribute('readonly',true);
+        document.getElementById('AcronimoC').value = datostupla.AcronimoC;
+        document.getElementById('AcronimoC').setAttribute('readonly',true);
 
-        document.getElementById('anho_congreso').value = datostupla.anho_congreso;
-        document.getElementById('anho_congreso').setAttribute('readonly',true);
+        document.getElementById('AnhoC').value = datostupla.AnhoC;
+        document.getElementById('AnhoC').setAttribute('readonly',true);
 
-        document.getElementById('lugar_congreso').value = datostupla.lugar_congreso;
-        document.getElementById('lugar_congreso').setAttribute('readonly',true);
+        document.getElementById('LugarC').value = datostupla.LugarC;
+        document.getElementById('LugarC').setAttribute('readonly',true);
 
-        document.getElementById('ficheropdf_congreso').value = datostupla.ficheropdf_congreso;
-        document.getElementById('ficheropdf_congreso').setAttribute('readonly',true);
-        document.getElementById('ficheropdf_congreso').setAttribute("readonly", true);
-        document.getElementById("link_ficheropdf_congreso").href += datostupla.ficheropdf_congreso;
+        document.getElementById('FicheropdfC').value = datostupla.FicheropdfC;
+        document.getElementById('FicheropdfC').setAttribute('readonly',true);
+        document.getElementById('FicheropdfC').setAttribute("readonly", true);
+        document.getElementById("link_FicheropdfC").href += datostupla.FicheropdfC;
 
-        document.getElementById("label_nuevo_ficheropdf_congreso").style.display = 'none';
-        document.getElementById("nuevo_ficheropdf_congreso").style.display = 'none';
+        document.getElementById("label_nuevo_FicheropdfC").style.display = 'none';
+        document.getElementById("nuevo_FicheropdfC").style.display = 'none';
 
         let botondelete = document.createElement('button');
         botondelete.id = 'botondelete';
@@ -143,29 +139,31 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById('IU_form').action = 'javascript:Gestion_congreso.SEARCH();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_congreso.comprobar_submit_SEARCH();');
 
-        document.getElementById('codigo_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_codigo_congreso_SEARCH()');
+        document.getElementById('CodigoC').setAttribute('onblur', 'Gestion_congreso.comprobar_CodigoC_SEARCH()');
         
-        document.getElementById('nombre_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_nombre_congreso_SEARCH()');
+        document.getElementById('NombreC').setAttribute('onblur', 'Gestion_congreso.comprobar_NombreC_SEARCH()');
         
-        document.getElementById('acronimo_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_acronimo_congreso_SEARCH()');
+        document.getElementById('AcronimoC').setAttribute('onblur', 'Gestion_congreso.comprobar_AcronimoC_SEARCH()');
         
-        document.getElementById('anho_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_anho_congreso_SEARCH()');
+        document.getElementById('AnhoC').setAttribute('onblur', 'Gestion_congreso.comprobar_AnhoC_SEARCH()');
         
-        document.getElementById('lugar_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_lugar_congreso_SEARCH()');
+        document.getElementById('LugarC').setAttribute('onblur', 'Gestion_congreso.comprobar_LugarC_SEARCH()');
 
-        document.getElementById("label_nuevo_ficheropdf_congreso").style.display = 'none';
-        document.getElementById("nuevo_ficheropdf_congreso").style.display = 'none';
-        document.getElementById("link_ficheropdf_congreso").style.display = 'none';
+        document.getElementById("label_nuevo_FicheropdfC").style.display = 'none';
+        document.getElementById("nuevo_FicheropdfC").style.display = 'none';
+        document.getElementById("link_FicheropdfC").style.display = 'none';
 
-        let botonadd = document.createElement('button');
-        botonadd.type = 'submit';
-        let imgadd = document.createElement('img');
-        imgadd.src = './iconos/SEARCH.png';
-        botonadd.append(imgadd);
-        document.getElementById('IU_form').append(botonadd);
+        let botonsearch = document.createElement('button');
+        botonsearch.type = 'submit';
+        let imgsearch = document.createElement('img');
+        imgsearch.src = './iconos/SEARCH.png';
+        botonsearch.append(imgsearch);
+        document.getElementById('IU_form').append(botonsearch);        
 
+        // para actualizar idioma
         setLang();
 
+        // se muestra el formulario
         document.getElementById('div_IU_form').style.display = 'block';
 
     }
@@ -174,12 +172,12 @@ class Gestion_congreso extends GestionEntidad{
 
     static comprobar_submit(){
 
-        let valor1 = this.comprobar_codigo_congreso();
-        let valor2 = this.comprobar_nombre_congreso();
-        let valor3 = this.comprobar_acronimo_congreso();
-        let valor4 = this.comprobar_anho_congreso();
-        let valor5 = this.comprobar_lugar_congreso();
-        let valor6 = this.comprobar_nuevo_ficheropdf_congreso();
+        let valor1 = this.comprobar_CodigoC();
+        let valor2 = this.comprobar_NombreC();
+        let valor3 = this.comprobar_AcronimoC();
+        let valor4 = this.comprobar_AnhoC();
+        let valor5 = this.comprobar_LugarC();
+        let valor6 = this.comprobar_nuevo_FicheropdfC();
 
         let resultado = (
             valor1 &&
@@ -195,12 +193,12 @@ class Gestion_congreso extends GestionEntidad{
 
     static comprobar_submit_EDIT(){
 
-        let valor1 = this.comprobar_codigo_congreso();
-        let valor2 = this.comprobar_nombre_congreso();
-        let valor3 = this.comprobar_acronimo_congreso();
-        let valor4 = this.comprobar_anho_congreso();
-        let valor5 = this.comprobar_lugar_congreso();
-        let valor6 = this.comprobar_nuevo_ficheropdf_congreso_EDIT();
+        let valor1 = this.comprobar_CodigoC();
+        let valor2 = this.comprobar_NombreC();
+        let valor3 = this.comprobar_AcronimoC();
+        let valor4 = this.comprobar_AnhoC();
+        let valor5 = this.comprobar_LugarC();
+        let valor6 = this.comprobar_nuevo_FicheropdfC_EDIT();
 
         let resultado = (
             valor1 &&
@@ -216,12 +214,12 @@ class Gestion_congreso extends GestionEntidad{
 
     static comprobar_submit_SEARCH(){
 
-        let valor1 = this.comprobar_codigo_congreso_SEARCH();
-        let valor2 = this.comprobar_nombre_congreso_SEARCH();
-        let valor3 = this.comprobar_acronimo_congreso_SEARCH();
-        let valor4 = this.comprobar_anho_congreso_SEARCH();
-        let valor5 = this.comprobar_lugar_congreso_SEARCH();
-        let valor6 = this.comprobar_ficheropdf_congreso_SEARCH();
+        let valor1 = this.comprobar_CodigoC_SEARCH();
+        let valor2 = this.comprobar_NombreC_SEARCH();
+        let valor3 = this.comprobar_AcronimoC_SEARCH();
+        let valor4 = this.comprobar_AnhoC_SEARCH();
+        let valor5 = this.comprobar_LugarC_SEARCH();
+        let valor6 = this.comprobar_FicheropdfC_SEARCH();
 
         let resultado = (
             valor1 &&
@@ -254,7 +252,7 @@ class Gestion_congreso extends GestionEntidad{
         await this.peticionBackGeneral('IU_form', 'congreso', 'EDIT')
         .then((respuesta) => {
             if (respuesta['ok']){
-                this.resetearformcongreso();
+                this.recargarform();
                 this.SEARCH();
             }
             else{
@@ -267,7 +265,7 @@ class Gestion_congreso extends GestionEntidad{
         await this.peticionBackGeneral('IU_form', 'congreso', 'DELETE')
         .then((respuesta) => {
             if (respuesta['ok']){
-                this.resetearformcongreso();
+                this.recargarform();
                 this.SEARCH();
             }
             else{
@@ -281,7 +279,7 @@ class Gestion_congreso extends GestionEntidad{
         await this.peticionBackGeneral('IU_form', 'congreso', 'SEARCH')
         .then((respuesta) => {
             this.recargarform();
-            // !! comprobar que el array solo tiene que tener codigo_congreso
+            // !! comprobar que el array solo tiene que tener CodigoC
             let congreso = new Gestion_congreso('congreso',respuesta['resource'],Array('CodigoC', 'NombreC', 'AcronimoC', 'AnhoC', 'LugarC', 'FicheropdfC')); congreso.mostrartabla();
             if (respuesta['code'] == 'RECORDSET_VACIO'){
                 document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
@@ -292,335 +290,335 @@ class Gestion_congreso extends GestionEntidad{
 //Validaciones----------------------------------------------------------------------
 
     //Validaciones de CodigoC:
-    static comprobar_codigo_congreso() {
+    static comprobar_CodigoC() {
 
-        if (validacionesatomicas.size_minimo('codigo_congreso', 4)) {
+        if (validacionesatomicas.size_minimo('CodigoC', 1)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('codigo_congreso', 'KO_codigo_congreso_tam_min');
+            DOM_class.mostrardivmensajeserrordebajo('CodigoC', 'KO_CodigoC_tam_min');
             return false;
-        } if (validacionesatomicas.size_maximo('codigo_congreso', 11)) {
+        } if (validacionesatomicas.size_maximo('CodigoC', 11)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('codigo_congreso', 'KO_codigo_congreso_tam_max');
-            return false;
-        }
-        if(validacionesatomicas.solo_numeros('codigo_congreso')){
-        } else {
-            DOM_class.mostrardivmensajeserrordebajo('codigo_congreso','KO_codigo_congreso_numeros');
+            DOM_class.mostrardivmensajeserrordebajo('CodigoC', 'KO_CodigoC_tam_max');
             return false;
         }
-        DOM_class.mostrarexitovalor('codigo_congreso');
+        if(validacionesatomicas.solo_numeros('CodigoC')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('CodigoC','KO_CodigoC_numeros');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('CodigoC');
         return true;
     }
 
-    static comprobar_codigo_congreso_SEARCH() {
+    static comprobar_CodigoC_SEARCH() {
 
-        if (validacionesatomicas.es_vacio('codigo_congreso')) {
-        } else {
-            DOM_class.mostrarexitovalor('codigo_congreso');
+        if (validacionesatomicas.es_vacio('CodigoC')) {
+            DOM_class.mostrarexitovalor('CodigoC');
             return true;
-        } if (validacionesatomicas.size_maximo('codigo_congreso', 11)) {
+        } if (validacionesatomicas.size_maximo('CodigoC', 11)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('codigo_congreso', 'KO_codigo_congreso_tam_max');
-            DOM_class.mostrarerrorvalor('codigo_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('CodigoC', 'KO_CodigoC_tam_max');
+            DOM_class.mostrarerrorvalor('CodigoC');
             return false;
         }
-        if(validacionesatomicas.solo_numeros('codigo_congreso')){
+        if(validacionesatomicas.solo_numeros('CodigoC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('codigo_congreso','KO_codigo_congreso_numeros');
-            DOM_class.mostrarerrorvalor('codigo_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('CodigoC','KO_CodigoC_numeros');
+            DOM_class.mostrarerrorvalor('CodigoC');
             return false;
         }
-        DOM_class.mostrarexitovalor('codigo_congreso');
+        DOM_class.mostrarexitovalor('CodigoC');
         return true;
     }
 
     //Validaciones de NombreC:
-    static comprobar_nombre_congreso() {
+    static comprobar_NombreC() {
 
-        if (validacionesatomicas.size_minimo('nombre_congreso', 2)) {
+        if (validacionesatomicas.size_minimo('NombreC', 2)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nombre_congreso', 'KO_nombre_congreso_tam_min');
+            DOM_class.mostrardivmensajeserrordebajo('NombreC', 'KO_NombreC_tam_min');
             return false;
-        } if (validacionesatomicas.size_maximo('nombre_congreso', 100)) {
+        } if (validacionesatomicas.size_maximo('NombreC', 100)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nombre_congreso', 'KO_nombre_congreso_tam_max');
-            return false;
-        }
-        if(validacionesatomicas.acentos_ñ_espacios('nombre_congreso')){
-        } else {
-            DOM_class.mostrardivmensajeserrordebajo('nombre_congreso','KO_nombre_congreso_acentos_ñ_espacios');
+            DOM_class.mostrardivmensajeserrordebajo('NombreC', 'KO_NombreC_tam_max');
             return false;
         }
-        DOM_class.mostrarexitovalor('nombre_congreso');
+        if(validacionesatomicas.acentos_ñ_espacios('NombreC')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('NombreC','KO_NombreC_acentos_ñ_espacios');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('NombreC');
         return true;
     }
 
-    static comprobar_nombre_congreso_SEARCH() {
+    static comprobar_NombreC_SEARCH() {
 
-        if (validacionesatomicas.es_vacio('nombre_congreso')) {
-            DOM_class.mostrarexitovalor('nombre_congreso');
+        if (validacionesatomicas.es_vacio('NombreC')) {
+            DOM_class.mostrarexitovalor('NombreC');
             return true;
         }
-        if (validacionesatomicas.size_maximo('nombre_congreso', 100)) {
+        if (validacionesatomicas.size_maximo('NombreC', 100)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nombre_congreso', 'KO_nombre_congreso_tam_max');
-            DOM_class.mostrarerrorvalor('nombre_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('NombreC', 'KO_NombreC_tam_max');
+            DOM_class.mostrarerrorvalor('NombreC');
             return false;
         }
-        if(validacionesatomicas.acentos_ñ_espacios('nombre_congreso')){
+        if(validacionesatomicas.acentos_ñ_espacios('NombreC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nombre_congreso','KO_nombre_congreso_acentos_ñ_espacios');
-            DOM_class.mostrarerrorvalor('nombre_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('NombreC','KO_NombreC_acentos_ñ_espacios');
+            DOM_class.mostrarerrorvalor('NombreC');
             return false;
         }
-        DOM_class.mostrarexitovalor('nombre_congreso');
+        DOM_class.mostrarexitovalor('NombreC');
         return true;
     }
 
     //Validaciones de AcronimoC:
-    static comprobar_acronimo_congreso() {
+    static comprobar_AcronimoC() {
 
-        if (validacionesatomicas.size_minimo('acronimo_congreso', 2)) {
+        if (validacionesatomicas.size_minimo('AcronimoC', 2)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('acronimo_congreso', 'KO_acronimo_congreso_tam_min');
+            DOM_class.mostrardivmensajeserrordebajo('AcronimoC', 'KO_AcronimoC_tam_min');
             return false;
-        } if (validacionesatomicas.size_maximo('acronimo_congreso', 20)) {
+        } if (validacionesatomicas.size_maximo('AcronimoC', 20)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('acronimo_congreso', 'KO_acronimo_congreso_tam_max');
-            return false;
-        }
-        if(validacionesatomicas.no_acentos_ñ_espacios('acronimo_congreso')){
-        } else {
-            DOM_class.mostrardivmensajeserrordebajo('acronimo_congreso','KO_acronimo_congreso_no_acentos_ñ_espacios');
+            DOM_class.mostrardivmensajeserrordebajo('AcronimoC', 'KO_AcronimoC_tam_max');
             return false;
         }
-        DOM_class.mostrarexitovalor('acronimo_congreso');
+        if(validacionesatomicas.no_acentos_ñ_espacios('AcronimoC')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('AcronimoC','KO_AcronimoC_no_acentos_ñ_espacios');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('AcronimoC');
         return true;
     }
 
-    static comprobar_acronimo_congreso_SEARCH() {
+    static comprobar_AcronimoC_SEARCH() {
 
-        if (validacionesatomicas.es_vacio('acronimo_congreso')) {
-            DOM_class.mostrarexitovalor('acronimo_congreso');
+        if (validacionesatomicas.es_vacio('AcronimoC')) {
+            DOM_class.mostrarexitovalor('AcronimoC');
             return false;
-        } if (validacionesatomicas.size_maximo('acronimo_congreso', 20)) {
+        } if (validacionesatomicas.size_maximo('AcronimoC', 20)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('acronimo_congreso', 'KO_acronimo_congreso_tam_max');
-            DOM_class.mostrarerrorvalor('acronimo_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('AcronimoC', 'KO_AcronimoC_tam_max');
+            DOM_class.mostrarerrorvalor('AcronimoC');
             return false;
         }
-        if(validacionesatomicas.no_acentos_ñ_espacios('acronimo_congreso')){
+        if(validacionesatomicas.no_acentos_ñ_espacios('AcronimoC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('acronimo_congreso','KO_acronimo_congreso_no_acentos_ñ_espacios');
-            DOM_class.mostrarerrorvalor('acronimo_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('AcronimoC','KO_AcronimoC_no_acentos_ñ_espacios');
+            DOM_class.mostrarerrorvalor('AcronimoC');
             return false;
         }
-        DOM_class.mostrarexitovalor('acronimo_congreso');
+        DOM_class.mostrarexitovalor('AcronimoC');
         return true;
     }
 
     //Validaciones de AnhoC:
-    static comprobar_anho_congreso() {
+    static comprobar_AnhoC() {
 
-        if (validacionesatomicas.size_minimo('anho_congreso', 10)) {
+        if (validacionesatomicas.size_minimo('AnhoC', 4)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('anho_congreso', 'KO_anho_congreso_tam_min');
+            DOM_class.mostrardivmensajeserrordebajo('AnhoC', 'KO_AnhoC_tam_min');
             return false;
-        } if (validacionesatomicas.size_maximo('anho_congreso', 10)) {
+        } if (validacionesatomicas.size_maximo('AnhoC', 4)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('anho_congreso', 'KO_anho_congreso_tam_max');
-            return false;
-        }
-        if(validacionesatomicas.formato_fecha_correcto('anho_congreso')){
-        } else {
-            DOM_class.mostrardivmensajeserrordebajo('anho_congreso','KO_anho_congreso_formato_fecha_correcto');
+            DOM_class.mostrardivmensajeserrordebajo('AnhoC', 'KO_AnhoC_tam_max');
             return false;
         }
-        DOM_class.mostrarexitovalor('anho_congreso');
+        if(validacionesatomicas.solo_numeros('AnhoC')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('AnhoC','KO_AnhoC_formato_fecha_correcto');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('AnhoC');
         return true;
     }
 
-    static comprobar_anho_congreso_SEARCH() {
+    static comprobar_AnhoC_SEARCH() {
 
-        if (validacionesatomicas.es_vacio('anho_congreso')) {
-            DOM_class.mostrarexitovalor('anho_congreso');
-            return false;
-        } if (validacionesatomicas.size_maximo('anho_congreso', 10)) {
+        if (validacionesatomicas.es_vacio('AnhoC')) {
+            DOM_class.mostrarexitovalor('AnhoC');
+            return true;
+        } 
+        if (validacionesatomicas.size_maximo('AnhoC', 4)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('anho_congreso', 'KO_anho_congreso_tam_max');
-            DOM_class.mostrarerrorvalor('anho_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('AnhoC', 'KO_AnhoC_tam_max');
+            DOM_class.mostrarerrorvalor('AnhoC');
             return false;
         }
-        if(validacionesatomicas.formato_fecha_correcto('anho_congreso')){
+        if(validacionesatomicas.solo_numeros('AnhoC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('anho_congreso','KO_anho_congreso_formato_fecha_correcto');
-            DOM_class.mostrarerrorvalor('anho_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('AnhoC','KO_AnhoC_formato_fecha_correcto');
+            DOM_class.mostrarerrorvalor('AnhoC');
             return false;
         }
-        DOM_class.mostrarexitovalor('anho_congreso');
+        DOM_class.mostrarexitovalor('AnhoC');
         return true;
     }
 
     //Validaciones de LugarC:
-    static comprobar_lugar_congreso() {
+    static comprobar_LugarC() {
 
-        if (validacionesatomicas.size_minimo('lugar_congreso', 2)) {
+        if (validacionesatomicas.size_minimo('LugarC', 2)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('lugar_congreso', 'KO_lugar_congreso_tam_min');
+            DOM_class.mostrardivmensajeserrordebajo('LugarC', 'KO_LugarC_tam_min');
             return false;
-        } if (validacionesatomicas.size_maximo('lugar_congreso', 20)) {
+        } if (validacionesatomicas.size_maximo('LugarC', 20)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('lugar_congreso', 'KO_lugar_congreso_tam_max');
-            return false;
-        }
-        if(validacionesatomicas.acentos_ñ_espacios('lugar_congreso')){
-        } else {
-            DOM_class.mostrardivmensajeserrordebajo('lugar_congreso','KO_lugar_congreso_acentos_ñ_espacios');
+            DOM_class.mostrardivmensajeserrordebajo('LugarC', 'KO_LugarC_tam_max');
             return false;
         }
-        DOM_class.mostrarexitovalor('lugar_congreso');
+        if(validacionesatomicas.acentos_ñ_espacios('LugarC')){
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('LugarC','KO_LugarC_acentos_ñ_espacios');
+            return false;
+        }
+        DOM_class.mostrarexitovalor('LugarC');
         return true;
     }
 
-    static comprobar_lugar_congreso_SEARCH() {
+    static comprobar_LugarC_SEARCH() {
 
-        if (validacionesatomicas.es_vacio('lugar_congreso')) {
-            DOM_class.mostrarexitovalor('lugar_congreso');
+        if (validacionesatomicas.es_vacio('LugarC')) {
+            DOM_class.mostrarexitovalor('LugarC');
             return true;
-        } if (validacionesatomicas.size_maximo('lugar_congreso', 20)) {
+        } if (validacionesatomicas.size_maximo('LugarC', 20)) {
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('lugar_congreso', 'KO_lugar_congreso_tam_max');
-            DOM_class.mostrarerrorvalor('lugar_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('LugarC', 'KO_LugarC_tam_max');
+            DOM_class.mostrarerrorvalor('LugarC');
             return false;
         }
-        if(validacionesatomicas.acentos_ñ_espacios('lugar_congreso')){
+        if(validacionesatomicas.acentos_ñ_espacios('LugarC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('lugar_congreso','KO_lugar_congreso_acentos_ñ_espacios');
-            DOM_class.mostrarerrorvalor('lugar_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('LugarC','KO_LugarC_acentos_ñ_espacios');
+            DOM_class.mostrarerrorvalor('LugarC');
             return false;
         }
-        DOM_class.mostrarexitovalor('lugar_congreso');
+        DOM_class.mostrarexitovalor('LugarC');
         return true;
     }
 
     //Validaciones de FihceropdfC:
-    static comprobar_nuevo_ficheropdf_congreso(){
-        if(validacionesatomicas.size_minimo_extension('nuevo_ficheropdf_congreso',1)){
+    static comprobar_nuevo_FicheropdfC(){
+        if(validacionesatomicas.size_minimo_extension('nuevo_FicheropdfC',1)){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdf_congreso','KO_nuevo_ficheropdf_congreso_tam_min');
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_FicheropdfC','KO_nuevo_FicheropdfC_tam_min');
             return false;
         }
-        if(validacionesatomicas.size_maximo_extension('nuevo_ficheropdf_congreso',20)){
+        if(validacionesatomicas.size_maximo_extension('nuevo_FicheropdfC',20)){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdf_congreso','KO_nuevo_ficheropdf_congreso_tam_max');
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_FicheropdfC','KO_nuevo_FicheropdfC_tam_max');
             return false;
         }
-        if(validacionesatomicas.no_acentos_ñ_espacios_fich('nuevo_ficheropdf_congreso')){
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('nuevo_FicheropdfC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdf_congreso','KO_nuevo_ficheropdf_congreso_no_acentos_ñ_espacios_fich');
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_FicheropdfC','KO_nuevo_FicheropdfC_no_acentos_ñ_espacios_fich');
             return false;
         }
-        if(validacionesatomicas.extension_fich_pdf('nuevo_ficheropdf_congreso')){
+        if(validacionesatomicas.extension_fich_pdf('nuevo_FicheropdfC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdf_congreso','KO_nuevo_ficheropdf_congreso_extension_fich_pdf');
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_FicheropdfC','KO_nuevo_FicheropdfC_extension_fich_pdf');
             return false;
         }
-        DOM_class.mostrarexitovalor('nuevo_ficheropdf_congreso');
+        DOM_class.mostrarexitovalor('nuevo_FicheropdfC');
         return true;
     }
 
-    static comprobar_nuevo_ficheropdf_congreso_EDIT(){
-        if(!validacionesatomicas.es_vacio('nuevo_ficheropdf_congreso')){
-            if(validacionesatomicas.size_minimo_extension('nuevo_ficheropdf_congreso',1)){
+    static comprobar_nuevo_FicheropdfC_EDIT(){
+        if(!validacionesatomicas.es_vacio('nuevo_FicheropdfC')){
+            if(validacionesatomicas.size_minimo_extension('nuevo_FicheropdfC',1)){
             } else {
-                DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdf_congreso','KO_nuevo_ficheropdf_congreso_tam_min');
+                DOM_class.mostrardivmensajeserrordebajo('nuevo_FicheropdfC','KO_nuevo_FicheropdfC_tam_min');
                 return false;
             }
-            if(validacionesatomicas.size_maximo_extension('nuevo_ficheropdf_congreso',20)){
+            if(validacionesatomicas.size_maximo_extension('nuevo_FicheropdfC',20)){
             } else {
-                DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdf_congreso','KO_nuevo_ficheropdf_congreso_tam_max');
+                DOM_class.mostrardivmensajeserrordebajo('nuevo_FicheropdfC','KO_nuevo_FicheropdfC_tam_max');
                 return false;
             }
-            if(validacionesatomicas.no_acentos_ñ_espacios_fich('nuevo_ficheropdf_congreso')){
+            if(validacionesatomicas.no_acentos_ñ_espacios_fich('nuevo_FicheropdfC')){
             } else {
-                DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdf_congreso','KO_nuevo_ficheropdf_congreso_no_acentos_ñ_espacios_fich');
+                DOM_class.mostrardivmensajeserrordebajo('nuevo_FicheropdfC','KO_nuevo_FicheropdfC_no_acentos_ñ_espacios_fich');
                 return false;
             }
-            if(validacionesatomicas.extension_fich_pdf('nuevo_ficheropdf_congreso')){
+            if(validacionesatomicas.extension_fich_pdf('nuevo_FicheropdfC')){
             } else {
-                DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdf_congreso','KO_nuevo_ficheropdf_congreso_extension_fich_pdf');
+                DOM_class.mostrardivmensajeserrordebajo('nuevo_FicheropdfC','KO_nuevo_FicheropdfC_extension_fich_pdf');
                 return false;
             }
         }
-        DOM_class.mostrarexitovalor('nuevo_ficheropdf_congreso');
+        DOM_class.mostrarexitovalor('nuevo_FicheropdfC');
         return true;
     }
 
-    static comprobar_nuevo_ficheropdf_congreso_SEARCH(){
-        if(validacionesatomicas.es_vacio('nuevo_ficheropdf_congreso')){
-            DOM_class.mostrarexitovalor('nuevo_ficheropdf_congreso');
+    static comprobar_nuevo_FicheropdfC_SEARCH(){
+        if(validacionesatomicas.es_vacio('nuevo_FicheropdfC')){
+            DOM_class.mostrarexitovalor('nuevo_FicheropdfC');
             return true;
         }
-        if(validacionesatomicas.size_maximo_extension('nuevo_ficheropdf_congreso',20)){
+        if(validacionesatomicas.size_maximo_extension('nuevo_FicheropdfC',20)){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdf_congreso','KO_nuevo_ficheropdf_congreso_tam_max');
-            DOM_class.mostrarerrorvalor('nuevo_ficheropdf_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_FicheropdfC','KO_nuevo_FicheropdfC_tam_max');
+            DOM_class.mostrarerrorvalor('nuevo_FicheropdfC');
             return false;
         }
-        if(validacionesatomicas.no_acentos_ñ_espacios_fich('nuevo_ficheropdf_congreso')){
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('nuevo_FicheropdfC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('nuevo_ficheropdf_congreso','KO_nuevo_ficheropdf_congreso_no_acentos_ñ_espacios_fich');
-            DOM_class.mostrarerrorvalor('nuevo_ficheropdf_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_FicheropdfC','KO_nuevo_FicheropdfC_no_acentos_ñ_espacios_fich');
+            DOM_class.mostrarerrorvalor('nuevo_FicheropdfC');
             return false;
         }
 
-        DOM_class.mostrarexitovalor('nuevo_ficheropdf_congreso');
+        DOM_class.mostrarexitovalor('nuevo_FicheropdfC');
         return true;
     }
 
-    static comprobar_ficheropdf_congreso(){
-        if(validacionesatomicas.size_minimo_extension('ficheropdf_congreso',1)){
+    static comprobar_FicheropdfC(){
+        if(validacionesatomicas.size_minimo_extension('FicheropdfC',1)){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('ficheropdf_congreso','KO_ficheropdf_congreso_tam_min');
+            DOM_class.mostrardivmensajeserrordebajo('FicheropdfC','KO_FicheropdfC_tam_min');
             return false;
         }
-        if(validacionesatomicas.size_maximo_extension('ficheropdf_congreso',20)){
+        if(validacionesatomicas.size_maximo_extension('FicheropdfC',20)){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('ficheropdf_congreso','KO_ficheropdf_congreso_tam_max');
+            DOM_class.mostrardivmensajeserrordebajo('FicheropdfC','KO_FicheropdfC_tam_max');
             return false;
         }
-        if(validacionesatomicas.no_acentos_ñ_espacios_fich('ficheropdf_congreso')){
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('FicheropdfC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('ficheropdf_congreso','KO_ficheropdf_congreso_no_acentos_ñ_espacios_fich');
+            DOM_class.mostrardivmensajeserrordebajo('FicheropdfC','KO_FicheropdfC_no_acentos_ñ_espacios_fich');
             return false;
         }
-        if(validacionesatomicas.extension_fich_pdf('ficheropdf_congreso')){
+        if(validacionesatomicas.extension_fich_pdf('FicheropdfC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('ficheropdf_congreso','KO_ficheropdf_congreso_extension_fich_pdf');
+            DOM_class.mostrardivmensajeserrordebajo('FicheropdfC','KO_FicheropdfC_extension_fich_pdf');
             return false;
         }
-        DOM_class.mostrarexitovalor('ficheropdf_congreso');
+        DOM_class.mostrarexitovalor('FicheropdfC');
         return true;
     }
 
-    static comprobar_ficheropdf_congreso_SEARCH(){
-        if(validacionesatomicas.es_vacio('ficheropdf_congreso')){
-            DOM_class.mostrarexitovalor('ficheropdf_congreso');
+    static comprobar_FicheropdfC_SEARCH(){
+        if(validacionesatomicas.es_vacio('FicheropdfC')){
+            DOM_class.mostrarexitovalor('FicheropdfC');
             return true;
         }
-        if(validacionesatomicas.size_maximo_extension('ficheropdf_congreso',20)){
+        if(validacionesatomicas.size_maximo_extension('FicheropdfC',20)){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('ficheropdf_congreso','KO_ficheropdf_congreso_tam_max');
-            DOM_class.mostrarerrorvalor('ficheropdf_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('FicheropdfC','KO_FicheropdfC_tam_max');
+            DOM_class.mostrarerrorvalor('FicheropdfC');
             return false;
         }
-        if(validacionesatomicas.no_acentos_ñ_espacios_fich('ficheropdf_congreso')){
+        if(validacionesatomicas.no_acentos_ñ_espacios_fich('FicheropdfC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('ficheropdf_congreso','KO_ficheropdf_congreso_no_acentos_ñ_espacios_fich');
-            DOM_class.mostrarerrorvalor('ficheropdf_congreso');
+            DOM_class.mostrardivmensajeserrordebajo('FicheropdfC','KO_FicheropdfC_no_acentos_ñ_espacios_fich');
+            DOM_class.mostrarerrorvalor('FicheropdfC');
             return false;
         }
-        DOM_class.mostrarexitovalor('ficheropdf_congreso');
+        DOM_class.mostrarexitovalor('FicheropdfC');
         return true;
     }
 
@@ -629,40 +627,40 @@ static recargarform(){
     document.getElementById("IU_form").innerHTML= '';
     document.getElementById("IU_form").innerHTML=`
     
-    <label class="label_codigo_congreso">Codigo de congreso: </label>
-    <input type='text' id='codigo_congreso' name='codigo_congreso'></input>
-    <div id="div_error_codigo_congreso" class="errorcampo"><a id="error_codigo_congreso"></a></div>
+    <label class="label_CodigoC">Codigo de congreso: </label>
+    <input type='text' id='CodigoC' name='CodigoC'></input>
+    <div id="div_error_CodigoC" class="errorcampo"><a id="error_CodigoC"></a></div>
     <br>
 
-    <label class="label_nombre_congreso">Nombre del congreso: </label>
-    <input type='text' id='nombre_congreso' name='nombre_congreso'></input>
-    <div id="div_error_nombre_congreso" class="errorcampo"><a id="error_nombre_congreso"></a></div>
+    <label class="label_NombreC">Nombre del congreso: </label>
+    <input type='text' id='NombreC' name='NombreC'></input>
+    <div id="div_error_NombreC" class="errorcampo"><a id="error_NombreC"></a></div>
     <br>
 
-    <label class="label_acronimo_congreso">Acronimo del congreso: </label>
-    <input type='text' id='acronimo_congreso' name='acronimo_congreso'></input>
-    <div id="div_error_acronimo_congreso" class="errorcampo"><a id="error_acronimo_congreso"></a></div>
+    <label class="label_AcronimoC">Acronimo del congreso: </label>
+    <input type='text' id='AcronimoC' name='AcronimoC'></input>
+    <div id="div_error_AcronimoC" class="errorcampo"><a id="error_AcronimoC"></a></div>
     <br>
 
-    <label class="label_anho_congreso">Fecha del congreso: </label>
-    <input type='date' id='anho_congreso' name='anho_congreso'></input>
-    <div id="div_error_anho_congreso" class="errorcampo"><a id="error_anho_congreso"></a></div>
+    <label class="label_AnhoC">Fecha del congreso: </label>
+    <input type='number' id='AnhoC' name='AnhoC'></input>
+    <div id="div_error_AnhoC" class="errorcampo"><a id="error_AnhoC"></a></div>
     <br>
 
-    <label class="label_lugar_congreso">Lugar del congreso: </label>
-    <input type='text' id='lugar_congreso' name='lugar_congreso'></input>
-    <div id="div_error_lugar_congreso" class="errorcampo"><a id="error_lugar_congreso"></a></div>
+    <label class="label_LugarC">Lugar del congreso: </label>
+    <input type='text' id='LugarC' name='LugarC'></input>
+    <div id="div_error_LugarC" class="errorcampo"><a id="error_LugarC"></a></div>
     <br>
 
-    <label id="label_ficheropdf_congreso" class="label_ficheropdf_congreso">Fichero PDF del congreso: </label>
-    <input type='text' id='ficheropdf_congreso' name='ficheropdf_congreso'></input>
-    <a id="link_ficheropdf_congreso" href="http://193.147.87.202/ET2/filesuploaded/files_ficheropdf_congreso/"><img src="./iconos/FILE.png" />
+    <label id="label_FicheropdfC" class="label_FicheropdfC">Fichero PDF del congreso: </label>
+    <input type='text' id='FicheropdfC' name='FicheropdfC'></input>
+    <a id="link_FicheropdfC" href="http://193.147.87.202/ET2/filesuploaded/files_FicheropdfC/"><img src="./iconos/FILE.png" />
 
-    <div id="div_error_ficheropdf_congreso" class="errorcampo"><a id="error_ficheropdf_congreso"></a></div>
+    <div id="div_error_FicheropdfC" class="errorcampo"><a id="error_FicheropdfC"></a></div>
         
-    <label id="label_nuevo_ficheropdf_congreso" class="label_nuevo_ficheropdf_congreso">Nuevo fichero pdf del congreso: </label>
-    <input type='file' id='nuevo_ficheropdf_congreso' name='nuevo_ficheropdf_congreso'></input>
-    <div id="div_error_nuevo_ficheropdf_congreso" class="errorcampo"><a id="error_nuevo_ficheropdf_congreso"></a></div>
+    <label id="label_nuevo_FicheropdfC" class="label_nuevo_FicheropdfC">Nuevo fichero pdf del congreso: </label>
+    <input type='file' id='nuevo_FicheropdfC' name='nuevo_FicheropdfC'></input>
+    <div id="div_error_nuevo_FicheropdfC" class="errorcampo"><a id="error_nuevo_FicheropdfC"></a></div>
     <br>
 
     `;
