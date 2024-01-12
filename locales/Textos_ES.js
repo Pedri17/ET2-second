@@ -55,9 +55,9 @@ let textos_ES={
     'KO_AcronimoC_tam_max': 'El acronimo del congreso no puede contener más de 20 caracteres',
     'KO_AcronimoC_no_acentos_ñ_espacios': 'El acronimo del congreso solo puede contener caracteres alfabéticos, sin acentos',
 
-    'KO_AnhoC_tam_min': 'La fecha del congreso debe seguir el formato dd/mm/aaaa',
-    'KO_AnhoC_tam_max': 'La fecha del congreso debe seguir el formato dd/mm/aaaa',
-    'KO_AnhoC_formato_fecha_correcto': 'La fecha del congreso debe ser correcta',
+    'KO_AnhoC_tam_min': 'El año del congreso debe poseer 4 dígitos',
+    'KO_AnhoC_tam_max': 'El año del congreso debe poseer 4 dígitos',
+    'KO_AnhoC_formato_fecha_correcto': 'El año del congreso debe ser el actual o uno pasado',
 
     'KO_LugarC_tam_min': 'El lugar del congreso no puede contener menos de 2 caracteres',
     'KO_LugarC_tam_max': 'El lugar del congreso no pede contener más de 20 caracteres',

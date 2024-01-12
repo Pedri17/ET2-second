@@ -642,7 +642,7 @@ static recargarform(){
     <div id="div_error_AcronimoC" class="errorcampo"><a id="error_AcronimoC"></a></div>
     <br>
 
-    <label class="label_AnhoC">Fecha del congreso: </label>
+    <label class="label_AnhoC">Año del congreso: </label>
     <input type='number' id='AnhoC' name='AnhoC'></input>
     <div id="div_error_AnhoC" class="errorcampo"><a id="error_AnhoC"></a></div>
     <br>
