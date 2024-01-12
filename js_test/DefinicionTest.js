@@ -22,11 +22,11 @@ def_test = Array(
     Array(13, 'congreso', 'AcronimoC', 'ADD/EDIT/SEARCH', 'longitud entre 2 y 20, conformado por caracteres apermitidos', 'Éxito', 'Acronimo introducido válido', true),
 
     //Tests de AnhoC:
-    Array(14, 'congreso', 'AnhoC', 'ADD/EDIT', 'tamaño menor a 10', 'La fecha del congreso debe seguir el formato dd/mm/aaaa', 'Fecha introducida inválida', false),
-    Array(15, 'congreso', 'AnhoC', 'SEARCH', 'vacío', 'Éxito', 'Fecha introducida válida', true),
-    Array(16, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', 'tamaño superior a 10', 'La fecha del congreso debe seguir el formato dd/mm/aaaa', 'Fecha introducida inválida', false),
-    Array(17, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', 'fecha inválida', 'la fecha del congreso debe ser válida, respetando los dias y meses existentes ', 'Fecha introducida inválida', false),
-    Array(18, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', 'longitud igual a 10, con el formato correcto', 'Éxito', 'Fecha introducida válida', true),
+    Array(14, 'congreso', 'AnhoC', 'ADD/EDIT', 'tamaño menor a 4', 'El año del congreso debe poseer 4 dígitos exactamente', 'Año introducida inválida', false),
+    Array(15, 'congreso', 'AnhoC', 'SEARCH', 'vacío', 'Éxito', 'Año introducida válida', true),
+    Array(16, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', 'tamaño superior a 4', 'El año del congreso debe poseer 4 dígitos exactamente', 'Año introducida inválida', false),
+    Array(17, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', 'caracteres no permitidos', 'El año del congreso solo puede contener dígitos ', 'Año introducida inválida', false),
+    Array(18, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', 'longitud igual a 4, conformado por caracteres permitidos', 'Éxito', 'Año introducida válida', true),
 
     //Tests de LugarC:
     Array(19, 'congreso', 'LugarC', 'ADD/EDIT', 'tamaño menor a 4', 'El lugar del congreso no puede contener menos de 2 caracteres', 'Lugar introducido inválido', false),
