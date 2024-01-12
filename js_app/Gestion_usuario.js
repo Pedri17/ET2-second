@@ -358,7 +358,7 @@ static async SEARCH(){
     await this.peticionBackGeneral('IU_form', 'usuario', 'SEARCH')
     .then((respuesta) => {
         this.recargarform();
-        let usuario = new Gestion_usuario('usuario',respuesta['resource'],Array('login_usuario')); usuario.mostrartabla();
+        let usuario = new Gestion_usuario('usuario',respuesta['resource'],Array('LoginU', 'PasswordU', 'NombreU', 'ApellidosU', 'TituloAcademicoU', 'TipoContratoU', 'CentroU', 'DepartamentoU', 'UniversidadU', 'FotoU', 'TipoU')); usuario.mostrartabla();
         if (respuesta['code'] == 'RECORDSET_VACIO'){
             document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
         }
