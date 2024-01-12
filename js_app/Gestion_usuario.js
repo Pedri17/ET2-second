@@ -191,7 +191,7 @@ class Gestion_usuario extends GestionEntidad{
         botonadd.append(imgadd);
         document.getElementById('IU_form').append(botonadd);
 
-        GestionEntidad.ponerReadOnly();
+        GestionEntidad.ponercamposreadonly();
 
         setLang();
 
@@ -434,7 +434,7 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('login_usuario','KO_login_usuario_acentos_ñ_espacios_numeros');
             return false;
         }
-        DOM_class.exito('login_usuario');
+        DOM_class.mostrarexitovalor('login_usuario');
         return true;
     }
 
@@ -456,7 +456,7 @@ static async SEARCH(){
             DOM_class.mostrarerrorvalor('login_usuario');
             return false;
         }
-        DOM_class.exito('login_usuario');
+        DOM_class.mostrarexitovalor('login_usuario');
         return true;
     }
 
@@ -477,7 +477,7 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('password_usuario','KO_password_usuario_acentos_ñ_espacios_numeros');
             return false;
         }
-        DOM_class.exito('password_usuario');
+        DOM_class.mostrarexitovalor('password_usuario');
         return true;
     }
 
@@ -499,7 +499,7 @@ static async SEARCH(){
             DOM_class.mostrarerrorvalor('password_usuario');
             return false;
         }
-        DOM_class.exito('password_usuario');
+        DOM_class.mostrarexitovalor('password_usuario');
         return true;
     }
 
@@ -520,7 +520,7 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('nombre_usuario','KO_nombre_usuario_acentos_ñ_espacios');
             return false;
         }
-        DOM_class.exito('nombre_usuario');
+        DOM_class.mostrarexitovalor('nombre_usuario');
         return true;
     }
 
@@ -542,7 +542,7 @@ static async SEARCH(){
             DOM_class.mostrarerrorvalor('nombre_usuario');
             return false;
         }
-        DOM_class.exito('nombre_usuario');
+        DOM_class.mostrarexitovalor('nombre_usuario');
         return true;
     }
 
@@ -563,7 +563,7 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('apellidos_usuario','KO_apellidos_usuario_acentos_ñ_espacios');
             return false;
         }
-        DOM_class.exito('apellidos_usuario');
+        DOM_class.mostrarexitovalor('apellidos_usuario');
         return true;
     }
 
@@ -585,7 +585,7 @@ static async SEARCH(){
             DOM_class.mostrarerrorvalor('apellidos_usuario');
             return false;
         }
-        DOM_class.exito('apellidos_usuario');
+        DOM_class.mostrarexitovalor('apellidos_usuario');
         return true;
     }
 
@@ -606,7 +606,7 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('tituloacademico_usuario','KO_tituloacademico_usuario_acentos_ñ_espacios_puntuacion');
             return false;
         }
-        DOM_class.exito('tituloacademico_usuario');
+        DOM_class.mostrarexitovalor('tituloacademico_usuario');
         return true;
     }
 
@@ -628,7 +628,7 @@ static async SEARCH(){
             DOM_class.mostrarerrorvalor('tituloacademico_usuario');
             return false;
         }
-        DOM_class.exito('tituloacademico_usuario');
+        DOM_class.mostrarexitovalor('tituloacademico_usuario');
         return true;
     }
 
@@ -649,7 +649,7 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('tipocontrato_usuario','KO_tipocontrato_usuario_acentos_ñ_espacios_puntuacion');
             return false;
         }
-        DOM_class.exito('tipocontrato_usuario');
+        DOM_class.mostrarexitovalor('tipocontrato_usuario');
         return true;
     }
 
@@ -671,7 +671,7 @@ static async SEARCH(){
             DOM_class.mostrarerrorvalor('tipocontrato_usuario');
             return false;
         }
-        DOM_class.exito('tipocontrato_usuario');
+        DOM_class.mostrarexitovalor('tipocontrato_usuario');
         return true;
     }
 
@@ -692,7 +692,7 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('centro_usuario','KO_centro_usuario_acentos_ñ_espacios_puntuacion');
             return false;
         }
-        DOM_class.exito('centro_usuario');
+        DOM_class.mostrarexitovalor('centro_usuario');
         return true;
     }
 
@@ -714,7 +714,7 @@ static async SEARCH(){
             DOM_class.mostrarerrorvalor('centro_usuario');
             return false;
         }
-        DOM_class.exito('centro_usuario');
+        DOM_class.mostrarexitovalor('centro_usuario');
         return true;
     }
 
@@ -735,7 +735,7 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('departamento_usuario','KO_departamento_usuario_acentos_ñ_espacios');
             return false;
         }
-        DOM_class.exito('departamento_usuario');
+        DOM_class.mostrarexitovalor('departamento_usuario');
         return true;
     }
 
@@ -757,7 +757,7 @@ static async SEARCH(){
             DOM_class.mostrarerrorvalor('departamento_usuario');
             return false;
         }
-        DOM_class.exito('departamento_usuario');
+        DOM_class.mostrarexitovalor('departamento_usuario');
         return true;
     }
 
@@ -778,7 +778,7 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('universidad_usuario','KO_universidad_usuario_acentos_ñ_espacios');
             return false;
         }
-        DOM_class.exito('universidad_usuario');
+        DOM_class.mostrarexitovalor('universidad_usuario');
         return true;
     }
 
@@ -800,7 +800,7 @@ static async SEARCH(){
             DOM_class.mostrarerrorvalor('universidad_usuario');
             return false;
         }
-        DOM_class.exito('universidad_usuario');
+        DOM_class.mostrarexitovalor('universidad_usuario');
         return true;
     }
 
@@ -933,12 +933,12 @@ static async SEARCH(){
             DOM_class.mostrardivmensajeserrordebajo('tipo_usuario', 'KO_tipo_usuario_formato');
             return false;
         }
-        DOM_class.exito('tipo_usuario');
+        DOM_class.mostrarexitovalor('tipo_usuario');
         return true;
     }
 
     static comprobar_tipo_usuario_SEARCH() {
-        DOM_class.exito('tipo_usuario');
+        DOM_class.mostrarexitovalor('tipo_usuario');
         return true;
     }
 
