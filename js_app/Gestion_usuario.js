@@ -36,18 +36,6 @@ class Gestion_usuario extends GestionEntidad{
 
         document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tipo_usuario()');
 
-        await this.peticionBackGeneral('', 'area', 'SEARCH')
-        .then((respuesta) => {
-            console.log(respuesta);
-            let listaareas = respuesta['resource'];
-            listaareas.forEach(element => {
-                let opcion = document.createElement('option');
-                opcion.value = element['id_area'];
-                opcion.innerHTML = element['nombre_area'];
-                document.getElementById('area').append(opcion);
-            }); 
-        });
-
         let botonadd = document.createElement('button');
         botonadd.type = 'submit';
         let imgadd = document.createElement('img');
@@ -61,67 +49,55 @@ class Gestion_usuario extends GestionEntidad{
 
     }
 
-    static async createForm_EDIT(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario){
+    static async createForm_EDIT(datostupla){
         this.recargarform();
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_EDIT_usuario";
         document.getElementById('IU_form').action = 'javascript:Gestion_usuario.EDIT();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_usuario.comprobar_submit_EDIT();');
 
         document.getElementById('login_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_login_usuario()');
-        document.getElementById('login_usuario').value = login_usuario;
+        document.getElementById('login_usuario').value = datostupla.login_usuario;
         document.getElementById('login_usuario').setAttribute("readonly","");
 
         document.getElementById('password_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_password_usuario()');
-        document.getElementById('password_usuario').value = password_usuario;
+        document.getElementById('password_usuario').value = datostupla.password_usuario;
 
         document.getElementById('nombre_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_nombre_usuario()');
-        document.getElementById('nombre_usuario').value = nombre_usuario;
+        document.getElementById('nombre_usuario').value = datostupla.nombre_usuario;
 
         document.getElementById('apellidos_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_apellidos_usuario()');
-        document.getElementById('apellidos_usuario').value = apellidos_usuario;
+        document.getElementById('apellidos_usuario').value = datostupla.apellidos_usuario;
 
         document.getElementById('tituloacademico_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tituloacademico_usuario()');
-        document.getElementById('tituloacademico_usuario').value = tituloacademico_usuario;
+        document.getElementById('tituloacademico_usuario').value = datostupla.tituloacademico_usuario;
 
         document.getElementById('tipocontrato_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tipocontrato_usuario()');
-        document.getElementById('tipocontrato_usuario').value = tipocontrato_usuario;
+        document.getElementById('tipocontrato_usuario').value = datostupla.tipocontrato_usuario;
 
         document.getElementById('centro_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_centro_usuario()');
-        document.getElementById('centro_usuario').value = centro_usuario;
+        document.getElementById('centro_usuario').value = datostupla.centro_usuario;
 
         document.getElementById('departamento_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_departamento_usuario()');
-        document.getElementById('departamento_usuario').value = departamento_usuario;
+        document.getElementById('departamento_usuario').value = datostupla.departamento_usuario;
 
         document.getElementById('universidad_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_universidad_usuario()');
-        document.getElementById('universidad_usuario').value = universidad_usuario;
+        document.getElementById('universidad_usuario').value = datostupla.universidad_usuario;
 
-        document.getElementById('foto_usuario').value = foto_usuario;
+        document.getElementById('foto_usuario').value = datostupla.foto_usuario;
         document.getElementById('link_foto_usuario').setAttribute('href','http://193.147.87.202/ET2/filesuploaded/files_foto_usuario/'+foto_usuario.value);
         document.getElementById('foto_usuario').setAttribute("readonly",true);
 
         document.getElementById('nueva_foto_usuario').setAttribute('onblur','Gestion_usuario.comprobar_nueva_foto_usuario()');
 
         document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tipo_usuario()');
-        document.getElementById('tipo_usuario').value = tipo_usuario;
+        document.getElementById('tipo_usuario').value = datostupla.tipo_usuario;
 
-        await this.peticionBackGeneral('', 'area', 'SEARCH')
-        .then((respuesta) => {
-            console.log(respuesta);
-            let listaareas = respuesta['resource'];
-            listaareas.forEach(element => {
-                let opcion = document.createElement('option');
-                opcion.value = element['id_area'];
-                opcion.innerHTML = element['nombre_area'];
-                document.getElementById('area').append(opcion);
-            }); 
-        });
-
-        let botonadd = document.createElement('button');
-        botonadd.type = 'submit';
-        let imgadd = document.createElement('img');
-        imgadd.src = './iconos/EDIT.png';
-        botonadd.append(imgadd);
-        document.getElementById('IU_form').append(botonadd);
+        let botonedit = document.createElement('button');
+        botonedit.type = 'submit';
+        let imgedit = document.createElement('img');
+        imgedit.src = './iconos/EDIT.png';
+        botonedit.append(imgedit);
+        document.getElementById('IU_form').append(botonedit);
 
         setLang();
 
@@ -129,77 +105,64 @@ class Gestion_usuario extends GestionEntidad{
 
     }
 
-    static async createForm_DELETE(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario){
+    static async createForm_DELETE(datostupla){
         this.recargarform();
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_DELETE_usuario";
         document.getElementById('IU_form').action = 'javascript:Gestion_usuario.DELETE();';
 
-        document.getElementById('login_usuario').value = login_usuario;
+        document.getElementById('login_usuario').value = datostupla.login_usuario;
         document.getElementById('login_usuario').setAttribute('readonly',true);
 
-        document.getElementById('password_usuario').value = password_usuario;
+        document.getElementById('password_usuario').value = datostupla.password_usuario;
         document.getElementById('password_usuario').setAttribute('readonly',true);
 
-        document.getElementById('nombre_usuario').value = nombre_usuario;
+        document.getElementById('nombre_usuario').value = datostupla.nombre_usuario;
         document.getElementById('nombre_usuario').setAttribute('readonly',true);
 
-        document.getElementById('apellidos_usuario').value = apellidos_usuario;
+        document.getElementById('apellidos_usuario').value = datostupla.apellidos_usuario;
         document.getElementById('apellidos_usuario').setAttribute('readonly',true);
 
-        document.getElementById('tituloacademico_usuario').value = tituloacademico_usuario;
+        document.getElementById('tituloacademico_usuario').value = datostupla.tituloacademico_usuario;
         document.getElementById('tituloacademico_usuario').setAttribute('readonly',true);
 
-        document.getElementById('tipocontrato_usuario').value = tipocontrato_usuario;
+        document.getElementById('tipocontrato_usuario').value = datostupla.tipocontrato_usuario;
         document.getElementById('tipocontrato_usuario').setAttribute('readonly',true);
 
-        document.getElementById('centro_usuario').value = centro_usuario;
+        document.getElementById('centro_usuario').value = datostupla.centro_usuario;
         document.getElementById('centro_usuario').setAttribute('readonly',true);
 
-        document.getElementById('departamento_usuario').value = departamento_usuario;
+        document.getElementById('departamento_usuario').value = datostupla.departamento_usuario;
         document.getElementById('departamento_usuario').setAttribute('readonly',true);
 
-        document.getElementById('universidad_usuario').value = universidad_usuario;
+        document.getElementById('universidad_usuario').value = datostupla.universidad_usuario;
         document.getElementById('universidad_usuario').setAttribute('readonly',true);
 
-        document.getElementById('foto_usuario').value = foto_usuario;
+        document.getElementById('foto_usuario').value = datostupla.foto_usuario;
         document.getElementById('foto_usuario').setAttribute('readonly',true);
         document.getElementById('foto_usuario').setAttribute("readonly", true);
-        document.getElementById("link_foto_usuario").href += foto_usuario;
+        document.getElementById("link_foto_usuario").href += datostupla.foto_usuario;
 
         document.getElementById("label_nueva_foto_usuario").style.display = 'none';
         document.getElementById("nueva_foto_usuario").style.display = 'none';
 
-        document.getElementById('tipo_usuario').value = tipo_usuario;
+        document.getElementById('tipo_usuario').value = datostupla.tipo_usuario;
         document.getElementById('tipo_usuario').setAttribute('readonly',true);
 
-        await this.peticionBackGeneral('', 'area', 'SEARCH')
-        .then((respuesta) => {
-            console.log(respuesta);
-            let listaareas = respuesta['resource'];
-            listaareas.forEach(element => {
-                let opcion = document.createElement('option');
-                opcion.value = element['id_area'];
-                opcion.innerHTML = element['nombre_area'];
-                document.getElementById('area').append(opcion);
-            }); 
-        });
-
-        let botonadd = document.createElement('button');
-        botonadd.type = 'submit';
-        let imgadd = document.createElement('img');
-        imgadd.src = './iconos/DELETE.png';
-        botonadd.append(imgadd);
-        document.getElementById('IU_form').append(botonadd);
-
-        GestionEntidad.ponercamposreadonly();
+        let botondelete = document.createElement('button');
+        botondelete.id = 'botondelete';
+        botondelete.type = 'submit';
+        let imgdelete = document.createElement('img');
+        imgdelete.src = './iconos/DELETE.png';
+        botondelete.append(imgdelete);
+        document.getElementById('IU_form').append(botondelete);
 
         setLang();
 
         document.getElementById('div_IU_form').style.display = 'block';
     }
 
-    static async createForm_SHOWCURRENT(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario){
-        this.createForm_DELETE(login_usuario, password_usuario, nombre_usuario, apellidos_usuario, tituloacademico_usuario, tipocontrato_usuario, centro_usuario, departamento_usuario, universidad_usuario, foto_usuario, tipo_usuario);
+    static async createForm_SHOWCURRENT(datostupla){
+        this.createForm_DELETE(datostupla);
 
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_SHOWCURRENT_usuario";
         document.getElementById('botondelete').remove();
@@ -243,29 +206,16 @@ class Gestion_usuario extends GestionEntidad{
 
         document.getElementById('tipo_usuario').setAttribute('onblur', 'Gestion_usuario.comprobar_tipo_usuario_SEARCH()');
 
-        await this.peticionBackGeneral('', 'area', 'SEARCH')
-        .then((respuesta) => {
-            console.log(respuesta);
-            let listaareas = respuesta['resource'];
-            listaareas.forEach(element => {
-                let opcion = document.createElement('option');
-                opcion.value = element['id_area'];
-                opcion.innerHTML = element['nombre_area'];
-                document.getElementById('area').append(opcion);
-            }); 
-        });
-
-        let botonadd = document.createElement('button');
-        botonadd.type = 'submit';
-        let imgadd = document.createElement('img');
-        imgadd.src = './iconos/SEARCH.png';
-        botonadd.append(imgadd);
-        document.getElementById('IU_form').append(botonadd);
+        let botonsearch = document.createElement('button');
+        botonsearch.type = 'submit';
+        let imgsearch = document.createElement('img');
+        imgsearch.src = './iconos/SEARCH.png';
+        botonsearch.append(imgsearch);
+        document.getElementById('IU_form').append(botonsearch);
 
         setLang();
 
         document.getElementById('div_IU_form').style.display = 'block';
-
     }
 
 //Submits---------------------------------------------------------------------------------------
@@ -408,7 +358,7 @@ static async SEARCH(){
     await this.peticionBackGeneral('IU_form', 'usuario', 'SEARCH')
     .then((respuesta) => {
         this.recargarform();
-        let usuario = new Gestion_usuario('usuarios',respuesta['resource'],Array('login_usuario')); usuario.mostrarTabla();
+        let usuario = new Gestion_usuario('usuario',respuesta['resource'],Array('login_usuario')); usuario.mostrartabla();
         if (respuesta['code'] == 'RECORDSET_VACIO'){
             document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
         }
@@ -441,7 +391,6 @@ static async SEARCH(){
     static comprobar_login_usuario_SEARCH() {
 
         if (validacionesatomicas.es_vacio('login_usuario')) {
-        } else {
             DOM_class.mostrarexitovalor('login_usuario');
             return true;
         } if (validacionesatomicas.size_maximo('login_usuario', 15)) {
@@ -484,7 +433,6 @@ static async SEARCH(){
     static comprobar_password_usuario_SEARCH() {
 
         if (validacionesatomicas.es_vacio('password_usuario')) {
-        } else {
             DOM_class.mostrarexitovalor('password_usuario');
             return true;
         } if (validacionesatomicas.size_maximo('password_usuario', 32)) {
@@ -527,7 +475,6 @@ static async SEARCH(){
     static comprobar_nombre_usuario_SEARCH() {
 
         if (validacionesatomicas.es_vacio('nombre_usuario')) {
-        } else {
             DOM_class.mostrarexitovalor('nombre_usuario');
             return true;
         } if (validacionesatomicas.size_maximo('nombre_usuario', 15)) {
@@ -570,7 +517,6 @@ static async SEARCH(){
     static comprobar_apellidos_usuario_SEARCH() {
 
         if (validacionesatomicas.es_vacio('apellidos_usuario')) {
-        } else {
             DOM_class.mostrarexitovalor('apellidos_usuario');
             return true;
         } if (validacionesatomicas.size_maximo('apellidos_usuario', 30)) {
@@ -613,7 +559,6 @@ static async SEARCH(){
     static comprobar_tituloacademico_usuario_SEARCH() {
 
         if (validacionesatomicas.es_vacio('tituloacademico_usuario')) {
-        } else {
             DOM_class.mostrarexitovalor('tituloacademico_usuario');
             return true;
         } if (validacionesatomicas.size_maximo('tituloacademico_usuario', 100)) {
@@ -656,7 +601,6 @@ static async SEARCH(){
     static comprobar_tipocontrato_usuario_SEARCH() {
 
         if (validacionesatomicas.es_vacio('tipocontrato_usuario')) {
-        } else {
             DOM_class.mostrarexitovalor('tipocontrato_usuario');
             return true;
         } if (validacionesatomicas.size_maximo('tipocontrato_usuario', 40)) {
@@ -699,7 +643,6 @@ static async SEARCH(){
     static comprobar_centro_usuario_SEARCH() {
 
         if (validacionesatomicas.es_vacio('centro_usuario')) {
-        } else {
             DOM_class.mostrarexitovalor('centro_usuario');
             return true;
         } if (validacionesatomicas.size_maximo('centro_usuario', 100)) {
@@ -742,7 +685,6 @@ static async SEARCH(){
     static comprobar_departamento_usuario_SEARCH() {
 
         if (validacionesatomicas.es_vacio('departamento_usuario')) {
-        } else {
             DOM_class.mostrarexitovalor('departamento_usuario');
             return true;
         } if (validacionesatomicas.size_maximo('departamento_usuario', 100)) {
@@ -785,7 +727,6 @@ static async SEARCH(){
     static comprobar_universidad_usuario_SEARCH() {
 
         if (validacionesatomicas.es_vacio('universidad_usuario')) {
-        } else {
             DOM_class.mostrarexitovalor('universidad_usuario');
             return true;
         } if (validacionesatomicas.size_maximo('universidad_usuario', 40)) {
@@ -927,7 +868,7 @@ static async SEARCH(){
 
     //Validaciones de TipoU:
     static comprobar_tipo_usuario() {
-
+        var valor = document.getElementById("tipo_usuario").value;
         if (valor === 'A' || valor === 'P') {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('tipo_usuario', 'KO_tipo_usuario_formato');

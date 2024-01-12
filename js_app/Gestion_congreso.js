@@ -47,7 +47,7 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_congreso.comprobar_submit_EDIT();');
 
         document.getElementById('codigo_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_codigo_congreso()');
-        document.getElementById('codigo_congreso').value = codigo_congreso;
+        document.getElementById('codigo_congreso').value = datostupla.codigo_congreso;
         document.getElementById('codigo_congreso').setAttribute("readonly","");
 
         document.getElementById('nombre_congreso').setAttribute('onblur', 'Gestion_congreso.comprobar_nombre_congreso()');
