@@ -865,7 +865,7 @@ static async SEARCH(){
     //Validaciones de TipoU:
     static comprobar_TipoU() {
         var valor = document.getElementById("TipoU").value;
-        if (valor === 'A' || valor === 'P') {
+        if (validacionesatomicas.valores_permitidos('TipoU')) {
         } else {
             DOM_class.mostrardivmensajeserrordebajo('TipoU', 'KO_TipoU_formato');
             return false;

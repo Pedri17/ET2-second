@@ -159,14 +159,8 @@ class validacionesatomicas{
         return (extension == "jpg" || extension == "jpeg");
     }
 
-    static size_adecuado(id, peso){
-        const fileInput = document.getElementById(id).value;
-        const file = fileInput.files[0].size; 
-        if(file>peso){
-            return false;
-        } else {
-            return true;
-        }
+    static valores_permitidos (id){
+        return document.getElementById(id).value === 'A' || document.getElementById(id).value === 'P';
     }
 
 }
