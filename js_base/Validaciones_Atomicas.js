@@ -117,16 +117,6 @@ class validacionesatomicas{
         }
     }
 
-    static formato_fecha_correcto(id){
-        const caracteres = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
-        const valido = caracteres.test(document.getElementById(id).value);
-        if(!valido){
-            return false; 
-        } else {
-            return true;
-        }
-    }
-
     static extension_fich_pdf(id){
         var content = document.getElementById(id).value;
         var extension = content;

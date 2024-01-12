@@ -57,7 +57,7 @@ let textos_ES={
 
     'KO_AnhoC_tam_min': 'El año del congreso debe poseer 4 dígitos',
     'KO_AnhoC_tam_max': 'El año del congreso debe poseer 4 dígitos',
-    'KO_AnhoC_formato_fecha_correcto': 'El año del congreso debe ser el actual o uno pasado',
+    'KO_AnhoC_solo_numeros': 'El año del congreso solo puede contener dígitos',
 
     'KO_LugarC_tam_min': 'El lugar del congreso no puede contener menos de 2 caracteres',
     'KO_LugarC_tam_max': 'El lugar del congreso no pede contener más de 20 caracteres',

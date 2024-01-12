@@ -430,7 +430,7 @@ class Gestion_congreso extends GestionEntidad{
         }
         if(validacionesatomicas.solo_numeros('AnhoC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('AnhoC','KO_AnhoC_formato_fecha_correcto');
+            DOM_class.mostrardivmensajeserrordebajo('AnhoC','KO_AnhoC_solo_numeros');
             return false;
         }
         DOM_class.mostrarexitovalor('AnhoC');
@@ -451,7 +451,7 @@ class Gestion_congreso extends GestionEntidad{
         }
         if(validacionesatomicas.solo_numeros('AnhoC')){
         } else {
-            DOM_class.mostrardivmensajeserrordebajo('AnhoC','KO_AnhoC_formato_fecha_correcto');
+            DOM_class.mostrardivmensajeserrordebajo('AnhoC','KO_AnhoC_solo_numeros');
             DOM_class.mostrarerrorvalor('AnhoC');
             return false;
         }
