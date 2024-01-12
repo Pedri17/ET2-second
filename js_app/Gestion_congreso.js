@@ -38,7 +38,7 @@ class Gestion_congreso extends GestionEntidad{
         document.getElementById('div_IU_form').style.display = 'block';
 
     }
-
+    
     //Ver tema de atributos pasados
     static async createForm_EDIT(datostupla){
         this.recargarform();
