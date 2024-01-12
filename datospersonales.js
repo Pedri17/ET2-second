@@ -1,5 +1,1 @@
-datos_ET2 = Array ('Entrega:“Corrección ET2”',
-	'dni',
-	'Antón Iglesias Blanco',
-	'horas'
- )
+datos_ET2 = Array('Entrega:“Corrección ET2"','53817845F','Antón Iglesias Blanco',54);
