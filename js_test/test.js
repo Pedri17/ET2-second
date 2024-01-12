@@ -2,7 +2,7 @@
 function test(){
     document.getElementById('div_IU_test').style.display = 'block';
     document.getElementById('tablaresultadostest').innerHTML = '';
-    pruebasunitarias.forEach(element => {
+    pruebas_test.forEach(element => {
             probar(element);
     });
 }
