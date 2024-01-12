@@ -1,8 +1,8 @@
 class validacionesatomicas{
 
     static es_vacio(id){
-        if(document.getElementById(id).value.length !== 0){
-            return true
+        if(document.getElementById(id).value==null || document.getElementById(id).value==''){
+            return true;
         } else {
             return false;
         }
@@ -63,7 +63,8 @@ class validacionesatomicas{
     }
 
     static solo_numeros(id){
-        if (/^[0-9]+$/.test(document.getElementById(id)) == true){
+        var regex = /^\d+$/
+        if (regex.test(document.getElementById(id).value) == true){
             return true;
         } else {
             return false;
@@ -71,7 +72,7 @@ class validacionesatomicas{
     }
 
     static acentos_ñ_espacios(id){
-        if (/^[A-Za-zÁ-Úá-úñÑ\s]+$/.test(document.getElementById(id)) == true){
+        if (/^[A-Za-zÁ-Úá-úñÑ\s]+$/.test(document.getElementById(id).value) == true){
             return true;
         } else {
             return false;
@@ -79,7 +80,7 @@ class validacionesatomicas{
     }
 
     static no_acentos_ñ_espacios(id){
-        if (/^[A-Za-z]+$/.test(document.getElementById(id)) == true){
+        if (/^[A-Za-z]+$/.test(document.getElementById(id).value) == true){
             return true;
         } else {
             return false;
@@ -87,15 +88,21 @@ class validacionesatomicas{
     }
 
     static no_acentos_ñ_espacios_fich(id){
-        if (/^[A-Za-z.\\\/]+$/.test(document.getElementById(id)) == true){
-            return true;
-        } else {
-            return false;
+        var regex = /^[A-Za-z.\\\/]+$/;
+        var value = document.getElementById(id).value;
+        var nombre = value;
+        
+        if(value != null){
+            if(value.includes("\\")){
+                nombre = value.split("\\")[2];
+            }
         }
+
+        return regex.test(nombre);
     }
 
     static acentos_ñ_espacios_numeros(id){
-        if (/^[0-9A-Za-zÁ-Úá-úñÑ\s]+$/.test(document.getElementById(id)) == true){
+        if (/^[0-9A-Za-zÁ-Úá-úñÑ\s]+$/.test(document.getElementById(id).value) == true){
             return true;
         } else {
             return false;
@@ -103,7 +110,7 @@ class validacionesatomicas{
     }
 
     static acentos_ñ_espacios_puntuacion(id){
-        if (/^[A-Za-zÁ-Úá-úñÑ\s;,:.¿?¡!«»“”‘’]+$/.test(document.getElementById(id)) == true){
+        if (/^[A-Za-zÁ-Úá-úñÑ\s;,:.¿?¡!«»“”‘’]+$/.test(document.getElementById(id).value) == true){
             return true;
         } else {
             return false;
@@ -111,8 +118,8 @@ class validacionesatomicas{
     }
 
     static formato_fecha_correcto(id){
-        const caracteres = /^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/\d{4}$/;
-        const valido = caracteres.test(document.getElementById(idElemento).value);
+        const caracteres = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+        const valido = caracteres.test(document.getElementById(id).value);
         if(!valido){
             return false; 
         } else {
@@ -122,14 +129,14 @@ class validacionesatomicas{
 
     static extension_fich_pdf(id){
         var content = document.getElementById(id).value;
-        var extension;
+        var extension = content;
 
         if(content != null){
             if(content.includes("\\")){
                 extension = content.split("\\")[2];
             }
             if(extension.includes(".")){
-                extension = nombre.split(".")[1];
+                extension = extension.split(".")[1];
             }
         }
 
@@ -138,14 +145,14 @@ class validacionesatomicas{
 
     static extension_fich_jpg_jpeg(id){
         var content = document.getElementById(id).value;
-        var extension;
+        var extension = content;
 
         if(content != null){
             if(content.includes("\\")){
                 extension = content.split("\\")[2];
             }
             if(extension.includes(".")){
-                extension = nombre.split(".")[1];
+                extension = extension.split(".")[1];
             }
         }
 
@@ -153,7 +160,7 @@ class validacionesatomicas{
     }
 
     static size_adecuado(id, peso){
-        const fileInput = document.getElementById(id);
+        const fileInput = document.getElementById(id).value;
         const file = fileInput.files[0].size; 
         if(file>peso){
             return false;
