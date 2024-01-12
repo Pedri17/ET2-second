@@ -35,16 +35,16 @@ pruebas_test = Array(
     Array (13, 26, 'congreso', 'AcronimoC', 'ADD/EDIT/SEARCH', 'CongresoAnton', true),
 
     //Pruebas de AnhoC:
-    Array (14, 27, 'congreso', 'AnhoC', 'ADD/EDIT', '07/06', false),
-    Array (14, 28, 'congreso', 'AnhoC', 'ADD/EDIT', '07/06/2002', true),
+    Array (14, 27, 'congreso', 'AnhoC', 'ADD/EDIT', '02', false),
+    Array (14, 28, 'congreso', 'AnhoC', 'ADD/EDIT', '2002', true),
     Array (15, 29, 'congreso', 'AnhoC', 'SEARCH', ' ', true),
-    Array (16, 30, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '0007/0006/2002', false),
-    Array (16, 31, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '07/06/2002', true),
-    Array (17, 32, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '99/99/9999', false),
-    Array (17, 33, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '35/13/3002', false),
-    Array (17, 34, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '07/06/2002', true),
-    Array (18, 35, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '07/06', false),
-    Array (18, 36, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '07/06/2002', true),
+    Array (16, 30, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '20000', false),
+    Array (16, 31, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '2002', true),
+    Array (17, 32, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', 'dos mil dos', false),
+    Array (17, 33, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '2002?', false),
+    Array (17, 34, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '2002', true),
+    Array (18, 35, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '02', false),
+    Array (18, 36, 'congreso', 'AnhoC', 'ADD/EDIT/SEARCH', '2002', true),
 
     //Pruebas de LugarC:
     Array (19, 37, 'congreso', 'LugarC', 'ADD/EDIT', 'Ou', false),
