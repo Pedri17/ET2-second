@@ -1,4 +1,4 @@
-def_test = 
+def_test = Array(
 
 //Congreso---------------------------------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ def_test =
     Array(26, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'tamaño mayor que 20', 'El fichero PDF del congreso debe tener una longitud máxima de 20 caracteres', 'Fichero PDF del congreso introducido inválido', false),
     Array(27, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'extensión distinta a pdf', 'El fichero PDF del congreso debe ser un fichero con la extensión .pdf', 'Fichero PDF del congreso introducido inválido', false),
     Array(28, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'caracteres no permitidos', 'El fichero PDF del congreso solo puede contener caracteres alfabéticos, sin acentos, . , \/ y \\', 'Fichero PDF del congreso introducido inválido', false),
-    Array(29, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'longitud entre 1 y 20, con caracteres y extensión permitidos', 'Éxito', 'Fichero PDF del congreso intrducido válido', true)
+    Array(29, 'congreso', 'ficheropdf_congreso', 'ADD/EDIT/SEARCH', 'longitud entre 1 y 20, con caracteres y extensión permitidos', 'Éxito', 'Fichero PDF del congreso intrducido válido', true),
 
 //Usuario---------------------------------------------------------------------------------------------------
 
@@ -121,8 +121,4 @@ def_test =
     Array(82, 'usuario', 'tipo_usuario', 'SEARCH', 'vacío', 'Éxito', 'Tipo de usuario introducido válido', true),
     Array(83, 'usuario', 'tipo_usuario', 'ADD/EDIT/SEARCH', 'valores permitidos', 'Éxito', 'Tipo de usuario introducido válido', true)
 
-
-
-
-
-
+);
