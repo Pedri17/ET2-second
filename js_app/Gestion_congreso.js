@@ -271,6 +271,7 @@ class Gestion_congreso extends GestionEntidad{
                 this.SEARCH();
             }
             else{
+                alert(respuesta['code']);
                 DOM_class.mostrardivmensajes(respuesta['code']);
             }
         });
@@ -281,7 +282,7 @@ class Gestion_congreso extends GestionEntidad{
         .then((respuesta) => {
             this.recargarform();
             // !! comprobar que el array solo tiene que tener codigo_congreso
-            let congreso = new Gestion_congreso('congreso',respuesta['resource'],Array('codigo_congreso')); congreso.mostrartabla();
+            let congreso = new Gestion_congreso('congreso',respuesta['resource'],Array('CodigoC', 'NombreC', 'AcronimoC', 'AnhoC', 'LugarC', 'FicheropdfC')); congreso.mostrartabla();
             if (respuesta['code'] == 'RECORDSET_VACIO'){
                 document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
             }
